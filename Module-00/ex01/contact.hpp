@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/15 11:40:17 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2020/12/15 21:01:23 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2020/12/16 15:05:20 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 #include <string>
 #include <iostream>
-#include <sstream>
-#include <string>
 #include <iomanip>
 
 class Contact{

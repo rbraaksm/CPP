@@ -6,7 +6,7 @@
 #    By: renebraaksma <renebraaksma@student.42.f      +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/02 12:38:19 by timvancitte   #+#    #+#                  #
-#    Updated: 2020/12/15 10:38:56 by rbraaksm      ########   odam.nl          #
+#    Updated: 2020/12/16 15:13:25 by rbraaksm      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ NAME = megaphone
 
 SRCS = megaphone.cpp
 
-FLAGS = -Wall -Wextra -Werror -std=c++98 -std=c++03 -pedantic
+FLAGS = -Wall -Wextra -Werror
 
 CMPL = clang++
 

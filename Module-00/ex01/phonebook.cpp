@@ -117,7 +117,7 @@ void		print_contact(Contact contacts[8], int index)
 				break ;
 		std::cout << "Please try again (1-" << index << "): ";
 	}
-	contacts[index - 1].print_contact_total();
+	contacts[number - 1].print_contact_total();
 }
 
 int			search(Contact contacts[8], int index)
