@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   pony.hpp                                           :+:    :+:            */
+/*   Pony.hpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/17 13:00:57 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2020/12/17 21:11:16 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/04 16:52:08 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ class Pony{
 		void	setFood(std::string Food);
 		void	setOwner(std::string Owner);
 		void	printInfo();
-		~Pony(){
-			std::cout << "BOOOOM!!! *HIHIHIHIHIHI*" << std::endl << "The pony is shocked and fled" << std::endl;}
+		~Pony();
 
 	private:
 		std::string	name;

@@ -6,12 +6,15 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/30 15:54:27 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2020/12/30 16:04:58 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/04 13:02:20 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
+
+# include <iostream>
+# include <string>
 
 class Weapon{
 	private:
@@ -19,7 +22,8 @@ class Weapon{
 
 	public:
 	Weapon(std::string);
-	~Weapon();
+	~Weapon(void);
 	const std::string&	getType();
-	void				setType();
+	void				setType(std::string);
 };
+#endif

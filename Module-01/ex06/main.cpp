@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/28 17:51:13 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2020/12/28 17:55:33 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/04 13:02:05 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ int		main(void)
         club.setType("some other type of club");
         bob.attack();
     }
-    // {
-    //     Weapon    club = Weapon("crude spiked club");
-    //     HumanB    jim("Jim");
-    //     jim.setWeapon(club);
-    //     jim.attack();
-    //     club.setType("some other type of club");
-    //     jim.attack();
-    // }
+    {
+        Weapon    club = Weapon("crude spiked club");
+        HumanB    jim("Jim");
+        jim.setWeapon(club);
+        jim.attack();
+        club.setType("some other type of club");
+        jim.attack();
+    }
 }

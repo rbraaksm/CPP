@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   HumanA.hpp                                         :+:    :+:            */
+/*   main.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/01/04 10:58:46 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/04 12:39:47 by rbraaksm      ########   odam.nl         */
+/*   Created: 2021/01/04 13:24:25 by rbraaksm      #+#    #+#                 */
+/*   Updated: 2021/01/04 15:52:46 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_HPP
-# define HUMANA_HPP
+#include "Replace.hpp"
 
-# include "Weapon.hpp"
-# include <string>
-# include <iostream>
 
-class HumanA{
-	private:
-	std::string		name;
-	Weapon&			weaponA;
+int		main(int argc, char **argv){
+	Replace a;
 
-	public:
-	HumanA(std::string, Weapon&);
-	~HumanA(void);
-	void			attack();
-};
-#endif
+	if (argc == 4){
+		a.setClass(argv[1], argv[2], argv[3]);
+		a.replaceWords();
+	}
+	else
+		std::cout << "executable FILE <string1> <string2>" << std::endl;
+}

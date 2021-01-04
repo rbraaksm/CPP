@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   HumanA.hpp                                         :+:    :+:            */
+/*   Replace.hpp                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/01/04 10:58:46 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/04 12:39:47 by rbraaksm      ########   odam.nl         */
+/*   Created: 2021/01/04 15:32:18 by rbraaksm      #+#    #+#                 */
+/*   Updated: 2021/01/04 17:02:46 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_HPP
-# define HUMANA_HPP
+#ifndef REPLACE_HPP
+# define REPLACE_HPP
 
-# include "Weapon.hpp"
-# include <string>
 # include <iostream>
+# include <fstream>
 
-class HumanA{
+class Replace{
 	private:
-	std::string		name;
-	Weapon&			weaponA;
+	std::ifstream	myFile;
+	std::ofstream	newFile;
+	std::string		file;
+	std::string		newfile;
+	std::string		find;
+	std::string		replace;
 
 	public:
-	HumanA(std::string, Weapon&);
-	~HumanA(void);
-	void			attack();
+	Replace();
+	~Replace();
+	void	setClass(std::string, std::string, std::string);
+	void	replaceWords(void);
 };
 #endif
