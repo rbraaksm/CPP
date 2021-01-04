@@ -6,15 +6,12 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/17 15:04:21 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/04 16:52:19 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/04 20:19:07 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Pony.hpp"
 
-Pony::~Pony(){
-	std::cout << "BOOOOM!!! *HIHIHIHIHIHI*" << std::endl << "The pony is shocked and fled" << std::endl;
-}
 void	Pony::setName(std::string Name){
 	name = Name;}
 
