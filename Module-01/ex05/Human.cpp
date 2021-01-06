@@ -6,18 +6,18 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/24 12:38:44 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/04 17:00:04 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/06 10:14:21 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Human.hpp"
 #include "Brain.hpp"
 
-Human::Human(void){
+Human::Human(){
 	return ;
 }
 
-Human::~Human(void){
+Human::~Human(){
 	return ;
 }
 

@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/04 15:38:00 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/04 17:02:38 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/06 10:36:30 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,6 @@ void	Replace::replaceWords(void){
 			buff.replace(buff.find(find), find.length(), replace);
 		newFile << buff;
 		newFile << std::endl;
-		if (buff == "")
-			newFile << std::endl;
 	}
 	myFile.close();
 	newFile.close();

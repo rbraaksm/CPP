@@ -6,11 +6,15 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/30 15:57:04 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/04 13:02:09 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/06 10:16:52 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
+
+Weapon::Weapon(){
+	return ;
+}
 
 Weapon::Weapon(std::string str)
 {

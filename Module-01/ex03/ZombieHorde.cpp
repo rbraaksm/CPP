@@ -6,12 +6,16 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/18 16:16:52 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2020/12/18 19:02:20 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/06 10:12:20 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 #include "ZombieHorde.hpp"
+
+ZombieHorde::ZombieHorde(){
+	return ;
+}
 
 ZombieHorde::~ZombieHorde(void){
 	for(int i = 0; i < total; i++){

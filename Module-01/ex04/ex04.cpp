@@ -17,7 +17,7 @@ int		main(void){
 	std::cout << "String    : " << str << std::endl;
 
 	std::string *pointer = &str;
-	std::cout << "Pointer   : " << pointer << std::endl;
+	std::cout << "Pointer   : " << *pointer << std::endl;
 
 	std::string &reference = str;
 	std::cout << "Reference : " << reference << std::endl;

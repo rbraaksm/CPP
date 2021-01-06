@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/17 12:23:09 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/04 20:19:26 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/06 10:06:30 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ void	ponyOnTheHeap(Pony *heap){
 	std::cout << "\x1b[31;01mDestructer\x1b[0m" << std::endl;
 	std::cout << "BOOOOM!!! *HIHIHIHIHIHI*" << std::endl << "The pony is shocked and fled" << std::endl;
 	delete heap;
-	heap = NULL;
 }
+
 int	main(void){
 	Pony stack;
 	Pony *heap;

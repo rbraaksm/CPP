@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/18 16:07:58 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2020/12/18 18:08:25 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/06 10:12:05 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,15 @@
 #include "Zombie.hpp"
 
 class ZombieHorde{
-	Zombie	*_zombie;
-	int		total;
-
 	public:
+		ZombieHorde();
 		ZombieHorde(int);
 		~ZombieHorde();
 		void announce();
 		std::string randomChump();
+	private:
+		Zombie	*_zombie;
+		int		total;
+
 };
 #endif

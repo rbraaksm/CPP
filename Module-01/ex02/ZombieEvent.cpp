@@ -6,11 +6,19 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/18 11:16:52 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2020/12/18 16:41:50 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/06 10:10:09 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ZombieEvent.hpp"
+
+ZombieEvent::ZombieEvent(){
+	return ;
+}
+
+ZombieEvent::~ZombieEvent(){
+	return ;
+}
 
 void	ZombieEvent::setZombieType(std::string Type){
 	type = Type;

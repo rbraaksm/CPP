@@ -6,7 +6,7 @@
 #    By: renebraaksma <renebraaksma@student.42.f      +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/02 12:38:19 by timvancitte   #+#    #+#                  #
-#    Updated: 2021/01/04 15:39:23 by rbraaksm      ########   odam.nl          #
+#    Updated: 2021/01/06 10:29:53 by rbraaksm      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,5 +36,6 @@ clean:
 	@echo $(RD)Removed Executables: $(NAME)$(NO)
 
 fclean: clean
+		@rm -f *.replace;
 
 re: fclean all

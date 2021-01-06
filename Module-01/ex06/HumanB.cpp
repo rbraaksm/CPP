@@ -6,11 +6,15 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/04 12:50:45 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/04 13:03:55 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/06 10:17:58 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
+
+HumanB::HumanB(){
+	return ;
+}
 
 HumanB::HumanB(std::string _name){
 	this->name = _name;
