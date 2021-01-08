@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/04 15:38:00 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/06 10:36:30 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/07 16:24:16 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,15 @@ void	Replace::setClass(std::string _file, std::string _find, std::string _replac
 
 void	Replace::replaceWords(void){
 	std::string	buff;
+	size_t		pos = 0;
 	while(std::getline(myFile, buff)){
-		while (buff.find(find) != std::string::npos)
-			buff.replace(buff.find(find), find.length(), replace);
+		while (buff.find(find) != std::string::npos){
+			pos = buff.find(find);
+			buff.replace(pos, find.length(), replace);
+			pos += replace.length();
+			newFile << buff.substr(0, pos);
+			buff = buff.substr(pos);
+		}
 		newFile << buff;
 		newFile << std::endl;
 	}

@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/04 15:32:18 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/06 10:22:41 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/07 16:24:37 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <fstream>
+# include <sstream>
 
 class Replace{
 	public:
@@ -22,7 +23,6 @@ class Replace{
 		~Replace();
 		void	setClass(std::string, std::string, std::string);
 		void	replaceWords(void);
-
 	private:
 		std::ifstream	myFile;
 		std::ofstream	newFile;

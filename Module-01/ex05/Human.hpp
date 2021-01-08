@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/24 12:23:24 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/06 10:14:27 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/08 10:51:03 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ class Human{
 	~Human();
 	Brain		getBrain();
 	std::string identify();
-
 	private:
 		Brain 	brain;
 };

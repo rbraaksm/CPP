@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/30 15:54:27 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/06 10:16:41 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/08 10:51:28 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class Weapon{
 		~Weapon(void);
 		const std::string&	getType();
 		void				setType(std::string);
-
 	private:
 		std::string			type;
 };

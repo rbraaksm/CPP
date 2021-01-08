@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/17 22:12:58 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/06 10:11:10 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/08 10:47:21 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ class Zombie{
 		Zombie();
 		Zombie(std::string, std::string);
 		~Zombie();
-		void	setName(std::string);
-		void	setType(std::string);
+		void		setName(std::string);
+		void		setType(std::string);
 		std::string getName();
-		void	announce();
+		void		announce();
 	private:
 		std::string	name;
 		std::string	type;
