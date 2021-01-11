@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 13:56:59 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/07 09:25:40 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/11 13:27:09 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,49 +18,52 @@ void	printStatus(FragTrap Ash, FragTrap Gary){
 	Gary.printStatus();
 	std::cout << PUR << "-------------------------------------------------" << BLK << std::endl << std::endl;
 }
- void	last_rounds(FragTrap Ash, FragTrap Gary, int i){
+
+void	last_rounds(FragTrap Ash, FragTrap Gary, int i){
+	FragTrap	first;
+	FragTrap	second;
+
+	if (i == 0){
+		first = Ash;
+		second = Gary;
+	}
+	else{
+		first = Gary;
+		second = Ash;
+	}
 	int Ash_HP = Ash.getHP();
 	int Gary_HP = Gary.getHP();
 	while (Ash_HP > 0 && Gary_HP > 0){
-		if (i == 0){
-			Ash.vaulthunter_dot_exe(Gary.getPokemon());
-			Gary.takeDamage(Ash.getDamage(-1));
-			printStatus(Ash, Gary);
-			Gary.vaulthunter_dot_exe(Ash.getPokemon());
-			Ash.takeDamage(Gary.getDamage(-1));
-			printStatus(Ash, Gary);
-		}
-		else{
-			Gary.vaulthunter_dot_exe(Ash.getPokemon());
-			Ash.takeDamage(Gary.getDamage(-1));
-			printStatus(Ash, Gary);
-			Ash.vaulthunter_dot_exe(Gary.getPokemon());
-			Gary.takeDamage(Ash.getDamage(1));
-			printStatus(Ash, Gary);
-		}
-		Ash_HP = Ash.getHP();
-		Gary_HP = Gary.getHP();
-		break;
+			first.vaulthunter_dot_exe(second.getPokemon());
+			second.takeDamage(first.getDamage());
+			printStatus(first, second);
+			if ((Ash_HP = first.getHP()) == 0 || (Gary_HP = second.getHP())== 0)
+				break ;
+			second.vaulthunter_dot_exe(first.getPokemon());
+			first.takeDamage(second.getDamage());
+			if ((Ash_HP = first.getHP()) == 0 || (Gary_HP = second.getHP()) == 0)
+				break ;
+			printStatus(first, second);
+			Ash_HP = first.getHP();
+			Gary_HP = second.getHP();
 	}
 }
 
-void	round_1(FragTrap Ash, FragTrap Gary){
-	int i;
-	i = rand() % 2;
+void	round_1(FragTrap Ash, FragTrap Gary, int i){
 	if (i == 0){
 		Ash.meleeAttack(Gary.getPokemon());
-		Gary.takeDamage(Ash.getDamage(-1));
+		Gary.takeDamage(Ash.getDamage());
 		printStatus(Ash, Gary);
 		Gary.rangedAttack(Ash.getPokemon());
-		Ash.takeDamage(Gary.getDamage(-1));
+		Ash.takeDamage(Gary.getDamage());
 		printStatus(Ash, Gary);
 	}
 	else{
 		Gary.meleeAttack(Ash.getPokemon());
-		Ash.takeDamage(Gary.getDamage(-1));
+		Ash.takeDamage(Gary.getDamage());
 		printStatus(Ash, Gary);
 		Ash.rangedAttack(Gary.getPokemon());
-		Gary.takeDamage(Ash.getDamage(-1));
+		Gary.takeDamage(Ash.getDamage());
 		printStatus(Ash, Gary);
 	}
 	last_rounds(Ash, Gary, i);
@@ -86,12 +89,22 @@ void	printWelcome(){
 
 int		main(void){
 	srand(time(NULL));
-	// printWelcome();
+	int i;
+	i = rand() % 2;
+	printWelcome();
 	std::cout << "<Ash>  ";
 	FragTrap	Ash("PIKACHU");
 	std::cout << "<Gary> ";
 	FragTrap	Gary("BLASTOISE");
 
 	std::cout << std::endl << RED << "3 " << YEL << " 2 " << GRN << " 1 " << YEL << " START!!" << BLK <<  std::endl << std::endl;
-	round_1(Ash, Gary);
+	std::cout << "type: START" << std::endl;
+	std::string str;
+	while (1){
+		if ((std::getline(std::cin, str)))
+			if (str == "START"){
+				round_1(Ash, Gary, i);}
+				return (0);
+			}
+			std::cout << "Please type: START" << std::endl;
 }

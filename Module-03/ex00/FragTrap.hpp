@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 13:57:48 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/07 10:40:32 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/11 13:08:00 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ class FragTrap{
 	public:
 	FragTrap();
 	FragTrap(std::string);
+	FragTrap  &operator=(FragTrap const&);
 	~FragTrap();
 	void				rangedAttack(std::string const & target);
 	void				meleeAttack(std::string const & target);
@@ -51,10 +52,12 @@ class FragTrap{
 	void				beRepaired(unsigned int amount);
 	void				vaulthunter_dot_exe(std::string const &target);
 	void				reduceEnergy();
-	void				printAttack(std::string, std::string, int, int);
+	void				printAttack(std::string, std::string, int);
 	void				printStatus();
 	std::string			getPokemon();
-	unsigned int		getDamage(int);
+	unsigned int		getDamage();
+	unsigned int		setDamage(int);
+	unsigned int		setDamage1(int);
 	int					getHP();
 	int					getReduction();
 };
