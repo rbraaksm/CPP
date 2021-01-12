@@ -6,11 +6,12 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 13:56:59 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/12 14:36:40 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/12 15:30:18 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 void	printWelcome(){
 	std::cout << "**********************************************************************" << std::endl;
@@ -33,10 +34,12 @@ void	printWelcome(){
 int		main(void){
 	srand(time(NULL));
 	printWelcome();
-	std::cout << "<Ash>  ";
+	std::cout << "<Ash>		";
 	FragTrap	Ash("Pikachu");
-	std::cout << "<Gary> ";
+	std::cout << "<Gary>		";
 	FragTrap	Gary("Blastoise");
+	std::cout << "<mr. Oak>	";
+	ScavTrap Oak("Muk");
 
 	std::cout << std::endl << "type: START/start" << std::endl;
 	std::string str;
@@ -49,10 +52,10 @@ int		main(void){
 		}
 	}
 	std::cout << std::endl << RED << "3 " << YEL << " 2 " << GRN << " 1 " << YEL << " START!!" << BLK <<  std::endl << std::endl;
-		Ash.meleeAttack(Gary.getPokemon());
-		Gary.takeDamage(Ash.getDamage());
-		Gary.rangedAttack(Ash.getPokemon());
-		Ash.takeDamage(Gary.getDamage());
+	Ash.meleeAttack(Gary.getPokemon());
+	Gary.takeDamage(Ash.getDamage());
+	Gary.rangedAttack(Ash.getPokemon());
+	Ash.takeDamage(Gary.getDamage());
 	int Ash_HP = Ash.getHP();
 	int Gary_HP = Gary.getHP();
 	while (Ash_HP > 0 && Gary_HP > 0){
@@ -67,4 +70,22 @@ int		main(void){
 			Ash_HP = Ash.getHP();
 			Gary_HP = Gary.getHP();
 	}
+	std::cout << std::endl;
+	if (Ash_HP == 0){
+		std::cout << "Mr. Oak is challenges Gary" << std::endl << std::endl;
+		Oak.meleeAttack(Gary.getPokemon());
+		std::cout << std::endl << "Muk is trying again" << std::endl << std::endl;
+		Oak.rangedAttack(Gary.getPokemon());
+		std::cout << std::endl << "WHAHAHA, he missed again. One more shot!!" << std::endl << std::endl;
+		Oak.challengeNewcomer(Gary.getPokemon());
+	}
+	else{
+		std::cout << "Mr. Oak is challenges Ash" << std::endl << std::endl;
+		Oak.meleeAttack(Ash.getPokemon());
+		std::cout << std::endl << "Muk is trying again" << std::endl << std::endl;
+		Oak.rangedAttack(Ash.getPokemon());
+		std::cout << std::endl << "WHAHAHA, he missed again. One more shot!!" << std::endl << std::endl;
+		Oak.challengeNewcomer(Ash.getPokemon());
+	}
+	std::cout << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 13:57:48 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/12 15:15:42 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/12 15:05:59 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # define BLK "\x1b[0m"
 # define GRN "\x1b[32;01m"
 # define PUR "\x1b[35;01m"
+# define CYA "\x1b[36;01m"
 
 # include <iostream>
 
@@ -39,6 +40,7 @@ class FragTrap{
 		std::string			getPokemon();
 		unsigned int		getDamage();
 		unsigned int		setDamage(int);
+		unsigned int		setDamage1(int);
 		int					getHP();
 		int					getReduction();
 	private:
