@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/12 09:12:43 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/13 14:39:03 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/13 17:31:30 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class ScavTrap : public ClapTrap{
 		void			rangedAttack(std::string const & target);
 		void			meleeAttack(std::string const & target);
 		void			takeDamage(unsigned int amount);
-		void			beRepaired(unsigned int amount);
 		void			challengeNewcomer(std::string const &target);
 };
 #endif

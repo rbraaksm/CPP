@@ -6,13 +6,14 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 11:15:28 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/13 14:33:31 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/13 17:32:36 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(){
+	std::cout << "Lets battle!!	";
 	return ;
 }
 
@@ -40,6 +41,10 @@ ClapTrap& ClapTrap::operator=(ClapTrap const &nw){
 }
 
 ClapTrap::~ClapTrap(void){
+	if (_hitPoints == 0 || _name == "Muk")
+		std::cout << "Bye loser!!" << std::endl;
+	else
+		std::cout << "Bye WINNER!!" << std::endl;
 	return ;
 }
 void	ClapTrap::beRepaired(unsigned int amount){
