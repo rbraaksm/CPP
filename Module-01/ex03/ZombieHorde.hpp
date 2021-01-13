@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/18 16:07:58 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/08 10:47:14 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/13 09:55:53 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ class ZombieHorde{
 		std::string randomChump();
 	private:
 		Zombie	*_zombie;
-		int		total;
+		int		_total;
 };
 #endif

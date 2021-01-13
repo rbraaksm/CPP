@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/04 15:38:00 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/07 16:24:16 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/13 10:00:42 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,19 @@ Replace::~Replace(void){
 	return ;
 }
 
-void	Replace::setClass(std::string _file, std::string _find, std::string _replace){
-	file = _file;
-	newfile = _file + ".replace";
-	find = _find;
-	replace = _replace;
-	myFile.open(file);
-	if (myFile.fail()){
-		std::cout << "CANNOT OPEN FILE: " << _file << std::endl;
+void	Replace::setClass(std::string file, std::string find, std::string replace){
+	_file = file;
+	_newfile = file + ".replace";
+	_find = find;
+	_replace = replace;
+	_myFile.open(file);
+	if (_myFile.fail()){
+		std::cout << "CANNOT OPEN FILE: " << file << std::endl;
 		exit(1);
 	}
-	newFile.open(newfile);
-	if (newFile.fail()){
-		std::cout << "CANNOT CREATE FILE: " << newfile << std::endl;
+	_newFile.open(_newfile);
+	if (_newFile.fail()){
+		std::cout << "CANNOT CREATE FILE: " << _newfile << std::endl;
 		exit(1);
 	}
 }
@@ -40,17 +40,17 @@ void	Replace::setClass(std::string _file, std::string _find, std::string _replac
 void	Replace::replaceWords(void){
 	std::string	buff;
 	size_t		pos = 0;
-	while(std::getline(myFile, buff)){
-		while (buff.find(find) != std::string::npos){
-			pos = buff.find(find);
-			buff.replace(pos, find.length(), replace);
-			pos += replace.length();
-			newFile << buff.substr(0, pos);
+	while(std::getline(_myFile, buff)){
+		while (buff.find(_find) != std::string::npos){
+			pos = buff.find(_find);
+			buff.replace(pos, _find.length(), _replace);
+			pos += _replace.length();
+			_newFile << buff.substr(0, pos);
 			buff = buff.substr(pos);
 		}
-		newFile << buff;
-		newFile << std::endl;
+		_newFile << buff;
+		_newFile << std::endl;
 	}
-	myFile.close();
-	newFile.close();
+	_myFile.close();
+	_newFile.close();
 }

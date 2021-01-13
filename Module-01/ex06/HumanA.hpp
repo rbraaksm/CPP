@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/04 10:58:46 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/08 10:51:10 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/13 09:57:23 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class HumanA{
 		~HumanA();
 		void		attack();
 	private:
-		std::string	name;
-		Weapon&		weaponA;
+		std::string	_name;
+		Weapon&		_weaponA;
 };
 #endif

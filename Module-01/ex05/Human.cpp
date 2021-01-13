@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/24 12:38:44 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/06 10:14:21 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/13 14:49:13 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ Human::~Human(){
 }
 
 Brain Human::getBrain(void){
-    return (this->brain);
+    return (_brain);
 }
 
 std::string Human::identify(void){
-	return (this->brain.identify());
+	return (_brain.identify());
 }

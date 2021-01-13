@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/24 12:19:59 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/08 10:50:48 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/13 09:56:35 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ class Brain{
 		~Brain();
 		std::string	identify();
 	private:
-		std::string address;
+		std::string _address;
 };
 #endif

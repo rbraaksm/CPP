@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 10:00:59 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/05 10:34:36 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/13 10:04:20 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,15 @@
 # include <iostream>
 
 class Fixed{
-	private:
-	int					fxd_pnt;
-	static const int	frac_bts = 8;
-
 	public:
-	Fixed();
-	~Fixed();
-	Fixed(const Fixed&);
-	Fixed &operator=(const Fixed&);
-	int		getRawBits(void) const;
-	void	setRawBits(int const raw);
-
+		Fixed();
+		~Fixed();
+		Fixed(const Fixed&);
+		Fixed &operator=(const Fixed&);
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
+	private:
+		int					_fxd_pnt;
+		static const int	_frac_bts = 8;
 };
 #endif

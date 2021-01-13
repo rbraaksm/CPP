@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/17 22:12:58 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/08 10:47:21 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/13 09:55:26 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Zombie{
 		std::string getName();
 		void		announce();
 	private:
-		std::string	name;
-		std::string	type;
+		std::string	_name;
+		std::string	_type;
 };
 #endif

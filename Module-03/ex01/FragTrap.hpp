@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 13:57:48 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/12 15:05:59 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/13 14:38:28 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,36 +29,36 @@ class FragTrap{
 		FragTrap(std::string);
 		FragTrap  &operator=(FragTrap const&);
 		~FragTrap();
-		void				rangedAttack(std::string const & target);
-		void				meleeAttack(std::string const & target);
-		void				takeDamage(unsigned int amount);
-		void				beRepaired(unsigned int amount);
-		void				vaulthunter_dot_exe(std::string const &target);
-		void				reduceEnergy();
-		void				printAttack(std::string, std::string, int);
-		void				printStatus(int);
-		std::string			getPokemon();
-		unsigned int		getDamage();
-		unsigned int		setDamage(int);
-		unsigned int		setDamage1(int);
-		int					getHP();
-		int					getReduction();
+		void			rangedAttack(std::string const & target);
+		void			meleeAttack(std::string const & target);
+		void			takeDamage(unsigned int amount);
+		void			beRepaired(unsigned int amount);
+		void			vaulthunter_dot_exe(std::string const &target);
+		void			reduceEnergy();
+		void			printAttack(std::string, std::string, int);
+		void			printStatus(int);
+		void			printMissed(std::string, std::string);
+		std::string		getPokemon();
+		unsigned int	getDamage();
+		unsigned int	setDamage(int);
+		int				getHP();
+		int				getReduction();
 	private:
-		unsigned int		hitPoints;
-		unsigned int		maxHitPoints;
-		unsigned int		energyPoints;
-		unsigned int		maxEnergypoints;
-		int					level;
-		std::string			name;
-		std::string			C;
-		unsigned int		meleeAttackDamage;
-		unsigned int		rangedAttackDamage;
-		unsigned int		armorDamageReduction;
-		unsigned int		tackleAttack;
-		unsigned int		tailWhip;
-		unsigned int		rollAttack;
-		unsigned int		quickAttack;
-		unsigned int		slamAttack;
-		unsigned int		attack;
+		unsigned int	_hitPoints;
+		unsigned int	_maxHitPoints;
+		unsigned int	_energyPoints;
+		unsigned int	_maxEnergypoints;
+		int				_level;
+		std::string		_name;
+		std::string		_C;
+		unsigned int	_meleeAttackDamage;
+		unsigned int	_rangedAttackDamage;
+		unsigned int	_armorDamageReduction;
+		unsigned int	_tackleAttack;
+		unsigned int	_tailWhip;
+		unsigned int	_rollAttack;
+		unsigned int	_quickAttack;
+		unsigned int	_slamAttack;
+		unsigned int	_attack;
 };
 #endif

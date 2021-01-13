@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/18 14:46:42 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/08 10:47:02 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/13 09:53:13 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ class ZombieEvent{
 		Zombie	*newZombie(std::string Name);
 		Zombie	*randomChump();
 	private:
-		std::string type;
+		std::string _type;
 };
 #endif

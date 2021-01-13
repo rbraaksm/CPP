@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/12 09:12:43 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/13 12:35:57 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/13 14:39:03 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 # define SCAVTRAP_HPP
 
 # include "FragTrap.hpp"
+// # include "ClapTrap.hpp"
 
-class ScavTrap{
+class ScavTrap : public ClapTrap{
 	public:
 		ScavTrap();
 		ScavTrap(std::string);
@@ -26,24 +27,5 @@ class ScavTrap{
 		void			takeDamage(unsigned int amount);
 		void			beRepaired(unsigned int amount);
 		void			challengeNewcomer(std::string const &target);
-		void			printStatus(int);
-		void			printMissed(std::string, std::string);
-	private:
-		unsigned int	_hitPoints;
-		unsigned int	_maxHitPoints;
-		unsigned int	_energyPoints;
-		unsigned int	_maxEnergypoints;
-		int				_level;
-		std::string		_name;
-		std::string		_C;
-		unsigned int	_meleeAttackDamage;
-		unsigned int	_rangedAttackDamage;
-		unsigned int	_armorDamageReduction;
-		unsigned int	_tackleAttack;
-		unsigned int	_tailWhip;
-		unsigned int	_rollAttack;
-		unsigned int	_quickAttack;
-		unsigned int	_slamAttack;
-		unsigned int	_attack;
 };
 #endif

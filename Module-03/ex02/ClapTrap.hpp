@@ -1,41 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ScavTrap.hpp                                       :+:    :+:            */
+/*   ClapTrap.hpp                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/01/12 09:12:43 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/13 12:35:57 by rbraaksm      ########   odam.nl         */
+/*   Created: 2021/01/13 10:36:14 by rbraaksm      #+#    #+#                 */
+/*   Updated: 2021/01/13 14:33:39 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
-# include "FragTrap.hpp"
+// # include "FragTrap.hpp"
+# include <iostream>
+# define YEL "\x1b[33;01m"
+# define BLU "\x1b[34;01m"
+# define RED "\x1b[31;01m"
+# define BLK "\x1b[0m"
+# define GRN "\x1b[32;01m"
+# define PUR "\x1b[35;01m"
+# define CYA "\x1b[36;01m"
 
-class ScavTrap{
+class ClapTrap{
 	public:
-		ScavTrap();
-		ScavTrap(std::string);
-		ScavTrap  &operator=(ScavTrap const&);
-		~ScavTrap();
-		void			rangedAttack(std::string const & target);
-		void			meleeAttack(std::string const & target);
-		void			takeDamage(unsigned int amount);
+		ClapTrap();
+		ClapTrap(std::string);
+		ClapTrap &operator=(ClapTrap const&);
+		~ClapTrap();
 		void			beRepaired(unsigned int amount);
-		void			challengeNewcomer(std::string const &target);
-		void			printStatus(int);
+		void			printStatus(int n);
 		void			printMissed(std::string, std::string);
-	private:
+	protected:
 		unsigned int	_hitPoints;
 		unsigned int	_maxHitPoints;
 		unsigned int	_energyPoints;
 		unsigned int	_maxEnergypoints;
-		int				_level;
-		std::string		_name;
-		std::string		_C;
+		int					_level;
+		std::string			_name;
+		std::string			_C;
 		unsigned int	_meleeAttackDamage;
 		unsigned int	_rangedAttackDamage;
 		unsigned int	_armorDamageReduction;
