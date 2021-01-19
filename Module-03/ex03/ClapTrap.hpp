@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 10:36:14 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/14 12:49:40 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/14 14:12:29 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ class ClapTrap{
 		ClapTrap(std::string);
 		ClapTrap &operator=(ClapTrap const&);
 		~ClapTrap();
+		std::string		getName() const;
 		void			beRepaired(unsigned int amount);
 		void			printStatus(int n);
 		void			printMissed(std::string, std::string);

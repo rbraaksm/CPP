@@ -6,12 +6,13 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 13:56:59 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/14 13:33:55 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/14 15:39:11 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "NinjaTrap.hpp"
 
 void	printWelcome(){
 	std::cout << "**********************************************************************" << std::endl;
@@ -76,7 +77,7 @@ int		main(void){
 		Oak.meleeAttack(Gary.getPokemon());
 		Oak.takeDamage(0);
 		Oak.beRepaired(5);
-		std::cout << std::endl << "Muk is trying again" << std::endl << std::endl;
+		std::cout << "Muk is trying again" << std::endl << std::endl;
 		Oak.rangedAttack(Gary.getPokemon());
 		Oak.takeDamage(0);
 		Oak.beRepaired(5);
@@ -88,12 +89,17 @@ int		main(void){
 		Oak.meleeAttack(Ash.getPokemon());
 		Oak.takeDamage(0);
 		Oak.beRepaired(0);
-		std::cout << std::endl << "Muk is trying again" << std::endl << std::endl;
+		std::cout << "Muk is trying again" << std::endl << std::endl;
 		Oak.rangedAttack(Ash.getPokemon());
 		Oak.takeDamage(0);
 		Oak.beRepaired(0);
 		std::cout << "WHAHAHA, he missed again. One more shot!!" << std::endl << std::endl;
 		Oak.challengeNewcomer(Ash.getPokemon());
 	}
-	std::cout << std::endl;
+	std::cout << std::endl << "-----NINJATRAP-----" << std::endl;
+	NinjaTrap ninja = NinjaTrap("Hitmonlee");
+	ninja.ninjaShoeBox(ninja);
+	ninja.ninjaShoeBox(Oak);
+	ninja.ninjaShoeBox(Ash);
+	std::cout << std::endl << "-----DESTRUCTOR-----" << std::endl;
 }

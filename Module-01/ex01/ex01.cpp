@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/17 21:27:13 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/04 16:35:46 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/18 15:59:01 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,3 +17,9 @@ void memoryLeak() {
 	std::cout << *panther << std::endl;
 	delete panther;
 }
+
+// int main(void){
+// 	memoryLeak();
+// 	system("leaks a.out");
+// 	return (0);
+// }

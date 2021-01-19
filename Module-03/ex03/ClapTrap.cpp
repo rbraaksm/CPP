@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 11:15:28 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/14 13:21:48 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/14 14:53:59 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,9 @@ ClapTrap& ClapTrap::operator=(ClapTrap const &nw){
 }
 
 ClapTrap::~ClapTrap(void){
-	if (_hitPoints == 0 || _name == "Muk")
+	if (_name == "Hitmonlee")
+		return ;
+	else if (_hitPoints == 0 || _name == "Muk")
 		std::cout << "Bye loser!!" << std::endl;
 	else
 		std::cout << "Bye WINNER!!" << std::endl;
@@ -90,4 +92,8 @@ void	ClapTrap::printMissed(std::string attacker, std::string target){
 		std::cout << color << attacker << "'s" << BLK << " attack missed " << YEL << target << BLK << std::endl;
 	else if (target == "Blastoise")
 		std::cout << color << attacker << "'s" << BLK << " attack missed " << BLU << target << BLK << std::endl;
+}
+
+std::string	ClapTrap::getName() const{
+	return (_name);
 }

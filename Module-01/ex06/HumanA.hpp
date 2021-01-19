@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/04 10:58:46 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/13 09:57:23 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/13 19:10:25 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,13 @@
 # define HUMANA_HPP
 
 # include "Weapon.hpp"
-# include <string>
-# include <iostream>
 
 class HumanA{
+	std::string	_name;
+	Weapon&		_weaponA;
 	public:
 		HumanA(std::string, Weapon&);
 		~HumanA();
-		void		attack();
-	private:
-		std::string	_name;
-		Weapon&		_weaponA;
+		void	attack();
 };
 #endif

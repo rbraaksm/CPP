@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 10:54:03 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/13 10:05:03 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/18 14:13:24 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,4 @@ class Fixed{
 		static const int	_frac_bts = 8;
 };
 
-std::ostream &operator<<(std::ostream&, const Fixed&);
 #endif

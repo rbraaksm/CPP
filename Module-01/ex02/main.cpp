@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/12/17 21:34:54 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2020/12/18 15:56:32 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/19 08:21:24 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int		main(void){
 	std::cout << ">>>>>>>>>> EVENT <<<<<<<<<<" << std::endl;
 	e.setZombieType("Dead");
 	zombie1 = e.newZombie("Shane");
-	zombie1->announce();
 	delete zombie1;
 
 	std::cout <<std::endl << ">>>>>>>>>> RANDOM <<<<<<<<<<" << std::endl;
