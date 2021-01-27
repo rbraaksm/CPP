@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/14 13:13:20 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/26 15:30:50 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/26 15:33:32 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,18 @@ void	NinjaTrap::ninjaShoeBox(NinjaTrap const& target){
 	std::cout << "Surprise!! " << target.getName() << " won a performance of JigglyPuff!!" << std::endl;
 }
 
-void	NinjaTrap::ninjaShoeBox(const ClapTrap &target){
+void	NinjaTrap::ninjaShoeBox(ClapTrap const& target){
 	std::cout << "Surprise!! " << target.getName() << " found a SuperPotion" << std::endl;
 }
 
 void	NinjaTrap::ninjaShoeBox(FragTrap const& target){
 	std::cout << "Surprise!! " << target.getName() << " is doing the moonwalk very smooth" << std::endl;
+}
+
+unsigned int	NinjaTrap::getEP(void) const{
+	return (_energyPoints);
+}
+
+unsigned int NinjaTrap::getMAD(void) const{
+	return (_meleeAttackDamage);
 }

@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 13:57:48 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/14 12:41:41 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/26 15:30:50 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,23 +41,24 @@ class FragTrap{
 	unsigned int	_slamAttack;
 	unsigned int	_attack;
 	public:
-		FragTrap();
-		FragTrap(std::string);
-		FragTrap  &operator=(FragTrap const&);
-		~FragTrap();
-		void			rangedAttack(std::string const & target);
-		void			meleeAttack(std::string const & target);
+		FragTrap(void);
+		FragTrap(std::string const name);
+		FragTrap(const FragTrap& cpy);
+		FragTrap  &operator=(FragTrap const& other);
+		~FragTrap(void);
+		void			rangedAttack(std::string const& target);
+		void			meleeAttack(std::string const& target);
 		void			takeDamage(unsigned int amount);
 		void			beRepaired(unsigned int amount);
-		void			vaulthunter_dot_exe(std::string const &target);
-		void			reduceEnergy();
-		void			printAttack(std::string, std::string, int);
-		void			printStatus(int);
-		void			printMissed(std::string, std::string);
-		std::string		getPokemon();
-		unsigned int	getDamage();
-		unsigned int	setDamage(int);
-		int				getHP();
-		int				getReduction();
+		void			vaulthunter_dot_exe(std::string const& target);
+		void			reduceEnergy(void);
+		void			printAttack(std::string attacker, std::string target, int amount);
+		void			printStatus(int n);
+		void			printMissed(std::string attacker, std::string target);
+		std::string		getPokemon(void) const;
+		unsigned int	getDamage(void) const;
+		unsigned int	setDamage(int i);
+		int				getHP(void) const;
+		int				getReduction(void) const;
 };
 #endif

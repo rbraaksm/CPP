@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 10:36:14 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/14 12:49:40 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/26 15:29:45 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,13 @@ class ClapTrap{
 		unsigned int	_slamAttack;
 		unsigned int	_attack;
 	public:
-		ClapTrap();
-		ClapTrap(std::string);
-		ClapTrap &operator=(ClapTrap const&);
-		~ClapTrap();
-		void			beRepaired(unsigned int amount);
-		void			printStatus(int n);
-		void			printMissed(std::string, std::string);
+		ClapTrap(void);
+		ClapTrap(std::string const name);
+		ClapTrap(const ClapTrap& cpy);
+		ClapTrap &operator=(const ClapTrap& nw);
+		~ClapTrap(void);
+		void	beRepaired(unsigned int amount);
+		void	printStatus(int n);
+		void	printMissed(std::string attacker, std::string target);
 };
 #endif

@@ -6,17 +6,17 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/12 09:35:25 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/13 14:47:26 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/26 15:30:50 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(){
+ScavTrap::ScavTrap(void){
 	return ;
 }
 
-ScavTrap::ScavTrap(std::string name){
+ScavTrap::ScavTrap(std::string const name){
 	std::cout << CYA << "Mr. Oak wants to fight against the winner" << BLK << std::endl;
 	_name = name;
 	_hitPoints = 100;
@@ -36,7 +36,25 @@ ScavTrap::ScavTrap(std::string name){
 	_C = CYA;
 }
 
-ScavTrap & ScavTrap::operator=(ScavTrap const &nw){
+ScavTrap::ScavTrap(const ScavTrap& cpy){
+	_name = cpy._name;
+	_hitPoints = cpy._hitPoints;
+	_maxHitPoints = cpy._maxHitPoints;
+	_energyPoints = cpy._energyPoints;
+	_maxEnergypoints = cpy._maxEnergypoints;
+	_level = cpy._level;
+	_meleeAttackDamage = cpy._meleeAttackDamage;
+	_rangedAttackDamage = cpy._rangedAttackDamage;
+	_armorDamageReduction = cpy._armorDamageReduction;
+	_tackleAttack = cpy._tackleAttack;
+	_tailWhip = cpy._tailWhip;
+	_rollAttack = cpy._rollAttack;
+	_quickAttack = cpy._quickAttack;
+	_slamAttack = cpy._slamAttack;
+	_C = cpy._C;
+}
+
+ScavTrap & ScavTrap::operator=(ScavTrap const& nw){
 	_name = nw._name;
 	_hitPoints = nw._hitPoints;
 	_maxHitPoints = nw._maxHitPoints;
@@ -55,7 +73,7 @@ ScavTrap & ScavTrap::operator=(ScavTrap const &nw){
 	return (*this);
 }
 
-ScavTrap::~ScavTrap(){
+ScavTrap::~ScavTrap(void){
 	std::cout << _C << "Mr. Oak is walking the walk of shame" << BLK << std::endl;
 	return ;
 }
@@ -86,7 +104,7 @@ void	ScavTrap::printMissed(std::string attacker, std::string target){
 		std::cout << color << attacker << "'s" << BLK << " attack missed " << BLU << target << BLK << std::endl;
 }
 
-void	ScavTrap::meleeAttack(std::string const &target){
+void	ScavTrap::meleeAttack(std::string const& target){
 	_attack = 0;
 	std::string attacker = "Muk";
 	std::cout << _C << attacker << BLK << " used MELEE!" << std::endl;
@@ -97,7 +115,7 @@ void	ScavTrap::meleeAttack(std::string const &target){
 	std::cout <<  " energyPoints are reduced by " << RED << _meleeAttackDamage / 2 << BLK << std::endl;
 }
 
-void	ScavTrap::rangedAttack(std::string const &target){
+void	ScavTrap::rangedAttack(std::string const& target){
 	_attack = 0;
 	std::string attacker = "Muk";
 	std::cout << _C << attacker << BLK << " used a RANGED ATTACK!" << std::endl;
@@ -120,7 +138,7 @@ void	ScavTrap::takeDamage(unsigned int amount){
 	}
 }
 
-void	ScavTrap::challengeNewcomer(std::string const &target){
+void	ScavTrap::challengeNewcomer(std::string const& target){
 	std::string color = (target == "Pikachu" ? YEL : BLU);
 	int	d = rand() % 5;
 	std::string attacker = "Muk";

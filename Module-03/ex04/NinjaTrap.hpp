@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/14 12:56:55 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/26 15:29:45 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/26 15:32:44 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@ class NinjaTrap : public ClapTrap{
 		NinjaTrap(void);
 		NinjaTrap(std::string const name);
 		NinjaTrap(const NinjaTrap& cpy);
-		~NinjaTrap(void);
 		NinjaTrap &operator=(NinjaTrap const& target);
+		~NinjaTrap(void);
 		void	ninjaShoeBox(NinjaTrap const& target);
-		void	ninjaShoeBox(const ClapTrap& target);
+		void	ninjaShoeBox(ClapTrap const& target);
 		void	ninjaShoeBox(FragTrap const& target);
+		unsigned int	getEP(void) const;
+		unsigned int	getMAD(void) const;
 };
 #endif

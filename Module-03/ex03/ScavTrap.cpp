@@ -6,38 +6,56 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/12 09:35:25 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/13 14:32:57 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/26 13:35:08 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
 
-ScavTrap::ScavTrap(){
+ScavTrap::ScavTrap(void){
 	return ;
 }
 
-ScavTrap::ScavTrap(std::string _name){
+ScavTrap::ScavTrap(std::string const name){
 	std::cout << CYA << "Mr. Oak wants to fight against the winner" << BLK << std::endl;
-	this->_name = _name;
-	this->_hitPoints = 100;
-	this->_maxHitPoints = 100;
-	this->_energyPoints = 100;
-	this->_maxEnergypoints = 100;
-	this->_level = 1;
-	this->_meleeAttackDamage = 30;
-	this->_rangedAttackDamage = 20;
-	this->_armorDamageReduction = 5;
-	this->_tackleAttack = 5;
-	this->_tailWhip = 0;
-	this->_rollAttack = 15;
-	this->_quickAttack = 10;
-	this->_slamAttack = 50;
-	this->_attack = 0;
-	this->_C = CYA;
+	_name = name;
+	_hitPoints = 100;
+	_maxHitPoints = 100;
+	_energyPoints = 100;
+	_maxEnergypoints = 100;
+	_level = 1;
+	_meleeAttackDamage = 30;
+	_rangedAttackDamage = 20;
+	_armorDamageReduction = 5;
+	_tackleAttack = 5;
+	_tailWhip = 0;
+	_rollAttack = 15;
+	_quickAttack = 10;
+	_slamAttack = 50;
+	_attack = 0;
+	_C = CYA;
 }
 
-ScavTrap & ScavTrap::operator=(ScavTrap const &nw){
+ScavTrap::ScavTrap(const ScavTrap& cpy){
+	_name = cpy._name;
+	_hitPoints = cpy._hitPoints;
+	_maxHitPoints = cpy._maxHitPoints;
+	_energyPoints = cpy._energyPoints;
+	_maxEnergypoints = cpy._maxEnergypoints;
+	_level = cpy._level;
+	_meleeAttackDamage = cpy._meleeAttackDamage;
+	_rangedAttackDamage = cpy._rangedAttackDamage;
+	_armorDamageReduction = cpy._armorDamageReduction;
+	_tackleAttack = cpy._tackleAttack;
+	_tailWhip = cpy._tailWhip;
+	_rollAttack = cpy._rollAttack;
+	_quickAttack = cpy._quickAttack;
+	_slamAttack = cpy._slamAttack;
+	_C = cpy._C;
+}
+
+ScavTrap & ScavTrap::operator=(ScavTrap const& nw){
 	this->_name = nw._name;
 	this->_hitPoints = nw._hitPoints;
 	this->_maxHitPoints = nw._maxHitPoints;
@@ -56,46 +74,46 @@ ScavTrap & ScavTrap::operator=(ScavTrap const &nw){
 	return (*this);
 }
 
-ScavTrap::~ScavTrap(){
+ScavTrap::~ScavTrap(void){
 	std::cout << _C << "Mr. Oak is walking the walk of shame" << BLK << std::endl;
 	return ;
 }
 
-void	ScavTrap::meleeAttack(std::string const &target){
-	this->_attack = 0;
+void	ScavTrap::meleeAttack(std::string const& target){
+	_attack = 0;
 	std::string attacker = "Muk";
 	std::cout << _C << attacker << BLK << " used MELEE!" << std::endl;
 	printMissed(attacker, target);
-	this->_energyPoints -= (this->_meleeAttackDamage / 2);
+	_energyPoints -= (_meleeAttackDamage / 2);
 	std::cout << _C << attacker << "'s" << BLK;
 	printStatus(1);
-	std::cout <<  " energyPoints are reduced by " << RED << this->_meleeAttackDamage / 2 << BLK << std::endl;
+	std::cout <<  " energyPoints are reduced by " << RED << _meleeAttackDamage / 2 << BLK << std::endl;
 }
 
-void	ScavTrap::rangedAttack(std::string const &target){
-	this->_attack = 0;
+void	ScavTrap::rangedAttack(std::string const& target){
+	_attack = 0;
 	std::string attacker = "Muk";
 	std::cout << _C << attacker << BLK << " used a RANGED ATTACK!" << std::endl;
 	printMissed(attacker, target);
-	this->_energyPoints -= (this->_rangedAttackDamage / 2);
+	_energyPoints -= (_rangedAttackDamage / 2);
 	std::cout << _C << attacker << "'s" << BLK;
 	printStatus(1);
-	std::cout <<  " energyPoints are reduced by " << RED << this->_rangedAttackDamage / 2 << BLK << std::endl;
+	std::cout <<  " energyPoints are reduced by " << RED << _rangedAttackDamage / 2 << BLK << std::endl;
 }
 
 void	ScavTrap::takeDamage(unsigned int amount){
 	std::string attacker = "Muk";
-	if (this->_hitPoints <= amount)
-		this->_hitPoints = 0;
+	if (_hitPoints <= amount)
+		_hitPoints = 0;
 	else
-		this->_hitPoints -= amount;
-	if (this->_hitPoints == 0){
-		std::cout << std::endl << _C << this->_name << BLK <<  " is " << RED << "K.O" << BLK << ", the winner is " << attacker << BLK << std::endl;
+		_hitPoints -= amount;
+	if (_hitPoints == 0){
+		std::cout << std::endl << _C << _name << BLK <<  " is " << RED << "K.O" << BLK << ", the winner is " << attacker << BLK << std::endl;
 		return ;
 	}
 }
 
-void	ScavTrap::challengeNewcomer(std::string const &target){
+void	ScavTrap::challengeNewcomer(std::string const& target){
 	std::string color = (target == "Pikachu" ? YEL : BLU);
 	int	d = rand() % 5;
 	std::string attacker = "Muk";

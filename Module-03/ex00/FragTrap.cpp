@@ -6,17 +6,17 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 14:19:17 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/13 14:45:46 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/26 15:30:50 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(){
+FragTrap::FragTrap(void){
 	return ;
 }
 
-FragTrap::FragTrap(std::string name){
+FragTrap::FragTrap(std::string const name){
 	if (name == "Pikachu")
 		std::cout << YEL << name << "!" << RED << "   I choose you!!    " << BLK "<" << YEL << "Pikachu" << BLK << ">" << YEL << " PIKA PIKA" << BLK << std::endl;
 	else
@@ -42,43 +42,61 @@ FragTrap::FragTrap(std::string name){
 		_C = BLU;
 }
 
-FragTrap & FragTrap::operator=(FragTrap const &nw){
-	_name = nw._name;
-	_hitPoints = nw._hitPoints;
-	_maxHitPoints = nw._maxHitPoints;
-	_energyPoints = nw._energyPoints;
-	_maxEnergypoints = nw._maxEnergypoints;
-	_level = nw._level;
-	_meleeAttackDamage = nw._meleeAttackDamage;
-	_rangedAttackDamage = nw._rangedAttackDamage;
-	_armorDamageReduction = nw._armorDamageReduction;
-	_tackleAttack = nw._tackleAttack;
-	_tailWhip = nw._tailWhip;
-	_rollAttack = nw._rollAttack;
-	_quickAttack = nw._quickAttack;
-	_slamAttack = nw._slamAttack;
-	_C = nw._C;
+FragTrap::FragTrap(const FragTrap& cpy){
+	_name = cpy._name;
+	_hitPoints = cpy._hitPoints;
+	_maxHitPoints = cpy._maxHitPoints;
+	_energyPoints = cpy._energyPoints;
+	_maxEnergypoints = cpy._maxEnergypoints;
+	_level = cpy._level;
+	_meleeAttackDamage = cpy._meleeAttackDamage;
+	_rangedAttackDamage = cpy._rangedAttackDamage;
+	_armorDamageReduction = cpy._armorDamageReduction;
+	_tackleAttack = cpy._tackleAttack;
+	_tailWhip = cpy._tailWhip;
+	_rollAttack = cpy._rollAttack;
+	_quickAttack = cpy._quickAttack;
+	_slamAttack = cpy._slamAttack;
+	_C = cpy._C;
+}
+
+FragTrap & FragTrap::operator=(FragTrap const& other){
+	_name = other._name;
+	_hitPoints = other._hitPoints;
+	_maxHitPoints = other._maxHitPoints;
+	_energyPoints = other._energyPoints;
+	_maxEnergypoints = other._maxEnergypoints;
+	_level = other._level;
+	_meleeAttackDamage = other._meleeAttackDamage;
+	_rangedAttackDamage = other._rangedAttackDamage;
+	_armorDamageReduction = other._armorDamageReduction;
+	_tackleAttack = other._tackleAttack;
+	_tailWhip = other._tailWhip;
+	_rollAttack = other._rollAttack;
+	_quickAttack = other._quickAttack;
+	_slamAttack = other._slamAttack;
+	_C = other._C;
 	return (*this);
 }
 
-FragTrap::~FragTrap(){
+FragTrap::~FragTrap(void){
 	std::cout << "<" << _C << _name << BLK << ">";
 	if (_hitPoints == 0)
-		std::cout << " Let's go the Pokémon Center!!" << std::endl;
+		std::cout << " Let's go to the Pokémon Center!!" << std::endl;
 	else
 		std::cout << " EASY WIN!!" << std::endl;
 	return ;
 }
 
-std::string	FragTrap::getPokemon(){
+std::string	FragTrap::getPokemon(void) const{
 	return (_name);
 }
 
-int		FragTrap::getHP(){
+int		FragTrap::getHP(void) const{
 	return (_hitPoints);
 }
 
-int		FragTrap::getReduction(){
+int		FragTrap::getReduction(void) const{
 	return (_armorDamageReduction);
 }
 
@@ -101,7 +119,7 @@ void	FragTrap::beRepaired(unsigned int amount){
 	std::cout << std::endl;
 }
 
-unsigned int		FragTrap::getDamage(){
+unsigned int		FragTrap::getDamage(void) const{
 	return (_attack);
 }
 
@@ -122,7 +140,7 @@ unsigned int		FragTrap::setDamage(int i){
 		return (_slamAttack);
 }
 
-void	FragTrap::reduceEnergy(){
+void	FragTrap::reduceEnergy(void){
 	unsigned int n = _energyPoints + 10;
 	if (n + 10 == 100)
 		n = 0;
@@ -164,7 +182,7 @@ void	FragTrap::printMissed(std::string attacker, std::string target){
 		std::cout << YEL << attacker << "'s" << BLK << " attack missed " << BLU << target << BLK << std::endl;
 }
 
-void	FragTrap::meleeAttack(std::string const &target){
+void	FragTrap::meleeAttack(std::string const& target){
 	int i = rand() % 2;
 	reduceEnergy();
 	_attack = 0;
@@ -183,7 +201,7 @@ void	FragTrap::meleeAttack(std::string const &target){
 	beRepaired(_armorDamageReduction);
 }
 
-void	FragTrap::rangedAttack(std::string const &target){
+void	FragTrap::rangedAttack(std::string const& target){
 	int i = rand() % 2;
 	reduceEnergy();
 	_attack = 0;
@@ -215,7 +233,7 @@ void	FragTrap::takeDamage(unsigned int amount){
 	}
 }
 
-void	FragTrap::vaulthunter_dot_exe(std::string const &target){
+void	FragTrap::vaulthunter_dot_exe(std::string const& target){
 	int i = rand() % 2;
 	int	d = rand() % 5;
 	reduceEnergy();
@@ -224,7 +242,7 @@ void	FragTrap::vaulthunter_dot_exe(std::string const &target){
 		_attack = setDamage(d + 2);
 	std::string attacker = (target == "Pikachu" ? "Blastoise" : "Pikachu");
 	std::string attackType[] = {"TACKLE", "tailWhip", "ROLL", "quickAttack", "SLAM"};
-	if ((_energyPoints - (_energyPoints / 2)) < 0){
+	if ((_energyPoints - 25) < 0){
 		std::cout << _C << attacker << BLK << " cannot use " << attackType[d] << " because EnergyPoint are too low!" << std::endl;
 		return ;
 	}
@@ -233,9 +251,9 @@ void	FragTrap::vaulthunter_dot_exe(std::string const &target){
 		printAttack(attacker, target, _attack);
 	else
 		printMissed(attacker, target);
-	_energyPoints -= (_attack / 2);
+	_energyPoints -= 25;
 	std::cout << _C << attacker << "'s" << BLK;
 	printStatus(1);
-	std::cout << " energyPoints are reduced by " << RED << _attack / 2 << BLK << std::endl;
+	std::cout << " energyPoints are reduced by " << RED << "25" << BLK << std::endl;
 	beRepaired(_armorDamageReduction);
 }

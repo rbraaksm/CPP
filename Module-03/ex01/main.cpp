@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 13:56:59 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/13 12:46:19 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/26 10:56:05 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	printWelcome(){
 int		main(void){
 	srand(time(NULL));
 	printWelcome();
+	std::cout << "--------CONSTRUCTOR--------" << std::endl;
 	std::cout << "<Ash>		";
 	FragTrap	Ash("Pikachu");
 	std::cout << "<Gary>		";
@@ -96,4 +97,5 @@ int		main(void){
 		Oak.challengeNewcomer(Ash.getPokemon());
 	}
 	std::cout << std::endl;
+	std::cout << "--------DESTRUCTOR--------" << std::endl;
 }

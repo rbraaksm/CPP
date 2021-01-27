@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 11:15:28 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/26 15:29:45 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/26 15:34:41 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ ClapTrap::ClapTrap(std::string const name){
 	_name = name;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &cpy){
+ClapTrap::ClapTrap(const ClapTrap& cpy){
 	_name = cpy._name;
 }
 
-ClapTrap& ClapTrap::operator=(const ClapTrap &nw){
+ClapTrap& ClapTrap::operator=(ClapTrap const& nw){
 	this->_name = nw._name;
 	this->_hitPoints = nw._hitPoints;
 	this->_maxHitPoints = nw._maxHitPoints;
@@ -95,4 +95,8 @@ void	ClapTrap::printMissed(std::string attacker, std::string target){
 		std::cout << color << attacker << "'s" << BLK << " attack missed " << YEL << target << BLK << std::endl;
 	else if (target == "Blastoise")
 		std::cout << color << attacker << "'s" << BLK << " attack missed " << BLU << target << BLK << std::endl;
+}
+
+std::string ClapTrap::getName(void) const{
+	return (_name);
 }

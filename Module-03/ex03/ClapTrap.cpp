@@ -6,22 +6,26 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 11:15:28 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/14 14:53:59 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/26 15:29:45 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(){
+ClapTrap::ClapTrap(void){
 	std::cout << "Lets battle!!	";
 	return ;
 }
 
-ClapTrap::ClapTrap(std::string name){
+ClapTrap::ClapTrap(std::string const name){
 	_name = name;
 }
 
-ClapTrap& ClapTrap::operator=(ClapTrap const &nw){
+ClapTrap::ClapTrap(const ClapTrap &cpy){
+	_name = cpy._name;
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap &nw){
 	this->_name = nw._name;
 	this->_hitPoints = nw._hitPoints;
 	this->_maxHitPoints = nw._maxHitPoints;
@@ -41,25 +45,24 @@ ClapTrap& ClapTrap::operator=(ClapTrap const &nw){
 }
 
 ClapTrap::~ClapTrap(void){
-	if (_name == "Hitmonlee")
-		return ;
-	else if (_hitPoints == 0 || _name == "Muk")
+	if (_hitPoints == 0 || _name == "Muk")
 		std::cout << "Bye loser!!" << std::endl;
 	else
 		std::cout << "Bye WINNER!!" << std::endl;
 	return ;
 }
+
 void	ClapTrap::beRepaired(unsigned int amount){
-	std::string C = this->_C;
-	unsigned int n = this->_hitPoints + amount;
+	std::string C = _C;
+	unsigned int n = _hitPoints + amount;
 	if (n - amount == 100)
 		n = 0;
-	else if (n >= this->_maxHitPoints)
-		n = amount - (n - this->_maxHitPoints);
+	else if (n >= _maxHitPoints)
+		n = amount - (n - _maxHitPoints);
 	else
 		n = amount;
-	this->_hitPoints += n;
-	std::cout << _C << this->_name << "'s" << BLK;
+	_hitPoints += n;
+	std::cout << _C << _name << "'s" << BLK;
 	printStatus(0);
 	if (n == 0)
 		std::cout << " hitpoints aren't increased, because his HP is full!" << std::endl;
@@ -70,16 +73,16 @@ void	ClapTrap::beRepaired(unsigned int amount){
 
 void	ClapTrap::printStatus(int n){
 	std::string COL;
-	if ((n == 0 && this->_hitPoints > 55) || (n == 1 && this->_energyPoints > 55))
+	if ((n == 0 && _hitPoints > 55) || (n == 1 && _energyPoints > 55))
 		COL = GRN;
-	else if ((n == 0 && this->_hitPoints > 25) || (n == 1 && this->_energyPoints > 25))
+	else if ((n == 0 && _hitPoints > 25) || (n == 1 && _energyPoints > 25))
 		COL = YEL;
 	else
 		COL = RED;
 	if (n == 0)
-		std::cout << " (" << COL << this->_hitPoints << BLK << "/100)";
+		std::cout << " (" << COL << _hitPoints << BLK << "/100)";
 	else
-		std::cout << " (" << COL << this->_energyPoints << BLK << "/100)";
+		std::cout << " (" << COL << _energyPoints << BLK << "/100)";
 }
 
 void	ClapTrap::printMissed(std::string attacker, std::string target){
@@ -94,6 +97,6 @@ void	ClapTrap::printMissed(std::string attacker, std::string target){
 		std::cout << color << attacker << "'s" << BLK << " attack missed " << BLU << target << BLK << std::endl;
 }
 
-std::string	ClapTrap::getName() const{
+std::string ClapTrap::getName(void) const{
 	return (_name);
 }

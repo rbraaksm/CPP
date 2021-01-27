@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 14:19:17 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/26 15:30:50 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/26 15:34:19 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ FragTrap::FragTrap(void){
 	return ;
 }
 
-FragTrap::FragTrap(std::string const name){
+FragTrap::FragTrap(std::string name){
 	if (name == "Pikachu")
 		std::cout << YEL << name << "!" << RED << "   I choose you!!    " << BLK "<" << YEL << "Pikachu" << BLK << ">" << YEL << " PIKA PIKA" << BLK << std::endl;
 	else
@@ -60,7 +60,7 @@ FragTrap::FragTrap(const FragTrap& cpy){
 	_C = cpy._C;
 }
 
-FragTrap & FragTrap::operator=(FragTrap const& nw){
+FragTrap & FragTrap::operator=(const FragTrap& nw){
 	this->_name = nw._name;
 	this->_hitPoints = nw._hitPoints;
 	this->_maxHitPoints = nw._maxHitPoints;
@@ -216,4 +216,13 @@ void	FragTrap::vaulthunter_dot_exe(std::string const& target){
 	printStatus(1);
 	std::cout << " energyPoints are reduced by " << RED << "25" << BLK << std::endl;
 	beRepaired(_armorDamageReduction);
+}
+
+
+unsigned int	FragTrap::getRAD(void) const{
+	return (_rangedAttackDamage);
+}
+
+unsigned int	FragTrap::getDR(void) const{
+	return (_armorDamageReduction);
 }
