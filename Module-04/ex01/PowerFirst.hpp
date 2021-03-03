@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Fixed.hpp                                          :+:    :+:            */
+/*   PowerFirst.hpp                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/01/05 10:54:03 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/20 11:48:50 by rbraaksm      ########   odam.nl         */
+/*   Created: 2021/03/02 14:54:36 by rbraaksm      #+#    #+#                 */
+/*   Updated: 2021/03/02 14:54:59 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef POWERFIRST_HPP
+# define POWERFIRST_HPP
 
-# include <iostream>
-# include <cmath>
+# include "AWeapon.hpp"
 
-class Fixed{
-	int					_fxd_pnt;
-	static const int	_frac_bts = 8;
+class PowerFirst : public AWeapon{
 	public:
-		Fixed();
-		~Fixed();
-		Fixed(const Fixed& other);
-		Fixed(const int n);
-		Fixed(const float n);
-		Fixed				&operator=(const Fixed& other);
-		int					getRawBits(void) const;
-		void				setRawBits(int const raw);
-		float				toFloat(void) const;
-		int					toInt(void) const;
+		PowerFirst();
+		PowerFirst(const PowerFirst &cpy);
+		virtual ~PowerFirst();
+		void	attack() const;
 };
 
 #endif

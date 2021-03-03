@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Fixed.hpp                                          :+:    :+:            */
+/*   Peon.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/01/05 10:00:59 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/20 11:49:56 by rbraaksm      ########   odam.nl         */
+/*   Created: 2021/03/02 11:55:27 by rbraaksm      #+#    #+#                 */
+/*   Updated: 2021/03/02 12:38:40 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#include "Peon.hpp"
 
-# include <iostream>
+Peon::Peon(void){
+	return ;
+}
 
-class Fixed{
-	int					_fxd_pnt;
-	static const int	_frac_bts = 8;
-	public:
-		Fixed();
-		~Fixed();
-		Fixed(const Fixed &other);
-		Fixed &operator=(const Fixed &other);
-		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
-};
-#endif
+Peon::Peon(std::string const name) : Victim(name){
+	std::cout << "Zog zog." << std::endl;
+	return ;
+}
+
+Peon::Peon(const Peon &cpy) : Victim(cpy){
+	return ;
+}
+
+Peon& Peon::operator=(const Peon &nw){
+	if (&nw != this)
+		Victim::operator=(nw);
+	return (*this);
+}
+
+Peon::~Peon(void){
+	std::cout << "Blueark..." << std::endl;
+	return ;
+}

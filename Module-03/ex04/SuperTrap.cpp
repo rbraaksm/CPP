@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/20 12:37:10 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/20 13:08:38 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/02/18 14:15:35 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 SuperTrap::SuperTrap(void){
 }
 
-SuperTrap::SuperTrap(std::string const name){
+SuperTrap::SuperTrap(std::string const name) : FragTrap(name), NinjaTrap(name){
+	std::cout << "---SuperTrap constructor---" << std::endl;
 	_name = name;
 	_hitPoints = FragTrap::getHP();
 	_energyPoints = NinjaTrap::getEP();
@@ -25,6 +26,18 @@ SuperTrap::SuperTrap(std::string const name){
 	_meleeAttackDamage = NinjaTrap::getMAD();
 	_meleeAttackDamage = FragTrap::getRAD();
 	_armorDamageReduction = FragTrap::getDR();
+}
+
+SuperTrap::SuperTrap(const SuperTrap& cpy) : FragTrap(cpy), NinjaTrap(cpy) {
+	_name = cpy._name;
+	_hitPoints = cpy._hitPoints;
+	_maxHitPoints = cpy._maxHitPoints;
+	_energyPoints = cpy._energyPoints;
+	_maxEnergyPoints = cpy._maxEnergyPoints;
+	_level = cpy._level;
+	_meleeAttackDamage = cpy._meleeAttackDamage;
+	_rangedAttackDamage = cpy._rangedAttackDamage;
+	_armorDamageReduction = cpy._armorDamageReduction;
 }
 
 SuperTrap & SuperTrap::operator=(SuperTrap const& other){
@@ -41,5 +54,15 @@ SuperTrap & SuperTrap::operator=(SuperTrap const& other){
 }
 
 SuperTrap::~SuperTrap(void){
+	std::cout << "---SuperTrap destructor---" << std::endl;
+	return ;
+}
 
+void	SuperTrap::meleeAttack(std::string const& target){
+	std::cout << RED << "Charizard " << BLK;
+	return (NinjaTrap::meleeAttack(target));
+}
+
+void	SuperTrap::rangedAttack(std::string const& target){
+	return (FragTrap::rangedAttack(target));
 }

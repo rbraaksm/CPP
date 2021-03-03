@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/14 13:13:20 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/26 15:30:50 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/27 12:11:37 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ NinjaTrap::NinjaTrap(std::string const name){
 	_hitPoints = 60;
 	_maxHitPoints = 60;
 	_energyPoints = 120;
-	_maxEnergypoints = 120;
+	_maxEnergyPoints = 120;
 	_level = 1;
 	_meleeAttackDamage = 60;
 	_rangedAttackDamage = 5;
@@ -35,7 +35,7 @@ NinjaTrap::NinjaTrap(const NinjaTrap& cpy){
 	_hitPoints = cpy._hitPoints;
 	_maxHitPoints = cpy._maxHitPoints;
 	_energyPoints = cpy._energyPoints;
-	_maxEnergypoints = cpy._maxEnergypoints;
+	_maxEnergyPoints = cpy._maxEnergyPoints;
 	_level = cpy._level;
 	_meleeAttackDamage = cpy._meleeAttackDamage;
 	_rangedAttackDamage = cpy._rangedAttackDamage;
@@ -47,7 +47,7 @@ NinjaTrap & NinjaTrap::operator=(NinjaTrap const& nw){
 	this->_hitPoints = nw._hitPoints;
 	this->_maxHitPoints = nw._maxHitPoints;
 	this->_energyPoints = nw._energyPoints;
-	this->_maxEnergypoints = nw._maxEnergypoints;
+	this->_maxEnergyPoints = nw._maxEnergyPoints;
 	this->_level = nw._level;
 	this->_meleeAttackDamage = nw._meleeAttackDamage;
 	this->_rangedAttackDamage = nw._rangedAttackDamage;

@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Fixed.hpp                                          :+:    :+:            */
+/*   PowerFirst.cpp                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/01/05 10:00:59 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/20 11:49:56 by rbraaksm      ########   odam.nl         */
+/*   Created: 2021/03/02 14:55:20 by rbraaksm      #+#    #+#                 */
+/*   Updated: 2021/03/02 14:56:27 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#include "PowerFirst.hpp"
 
-# include <iostream>
+PowerFirst::PowerFirst(void) : AWeapon("Power First", 8, 50){
+	return ;
+}
 
-class Fixed{
-	int					_fxd_pnt;
-	static const int	_frac_bts = 8;
-	public:
-		Fixed();
-		~Fixed();
-		Fixed(const Fixed &other);
-		Fixed &operator=(const Fixed &other);
-		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
-};
-#endif
+PowerFirst::PowerFirst(const PowerFirst &cpy) : AWeapon(cpy){
+	return ;
+}
+
+PowerFirst::~PowerFirst(void){
+	return ;
+}
+
+void	PowerFirst::attack(void) const{
+	std::cout << "* pschhh... SBAM! *" << std::endl;
+	return ;
+}

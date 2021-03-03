@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 14:19:17 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/26 15:30:50 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/27 12:57:53 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ FragTrap::FragTrap(std::string const name){
 	_hitPoints = 100;
 	_maxHitPoints = 100;
 	_energyPoints = 100;
-	_maxEnergypoints = 100;
+	_maxEnergyPoints = 100;
 	_level = 1;
 	_meleeAttackDamage = 30;
 	_rangedAttackDamage = 20;
@@ -47,7 +47,7 @@ FragTrap::FragTrap(const FragTrap& cpy){
 	_hitPoints = cpy._hitPoints;
 	_maxHitPoints = cpy._maxHitPoints;
 	_energyPoints = cpy._energyPoints;
-	_maxEnergypoints = cpy._maxEnergypoints;
+	_maxEnergyPoints = cpy._maxEnergyPoints;
 	_level = cpy._level;
 	_meleeAttackDamage = cpy._meleeAttackDamage;
 	_rangedAttackDamage = cpy._rangedAttackDamage;
@@ -65,7 +65,7 @@ FragTrap & FragTrap::operator=(FragTrap const& other){
 	_hitPoints = other._hitPoints;
 	_maxHitPoints = other._maxHitPoints;
 	_energyPoints = other._energyPoints;
-	_maxEnergypoints = other._maxEnergypoints;
+	_maxEnergyPoints = other._maxEnergyPoints;
 	_level = other._level;
 	_meleeAttackDamage = other._meleeAttackDamage;
 	_rangedAttackDamage = other._rangedAttackDamage;
@@ -238,20 +238,25 @@ void	FragTrap::vaulthunter_dot_exe(std::string const& target){
 	int	d = rand() % 5;
 	reduceEnergy();
 	_attack = 0;
-	if (i > 0)
-		_attack = setDamage(d + 2);
 	std::string attacker = (target == "Pikachu" ? "Blastoise" : "Pikachu");
 	std::string attackType[] = {"TACKLE", "tailWhip", "ROLL", "quickAttack", "SLAM"};
-	if ((_energyPoints - 25) < 0){
-		std::cout << _C << attacker << BLK << " cannot use " << attackType[d] << " because EnergyPoint are too low!" << std::endl;
+	if (_energyPoints < 25){
+		std::cout << _C << attacker << BLK << " cannot use " << attackType[d] << " because energyPoints are too low!" << std::endl;
+		std::cout << _C << attacker << BLK << " energyPoints are increased by 10" << std::endl << std::endl;
+		reduceEnergy();
 		return ;
 	}
+	if (i > 0)
+		_attack = setDamage(d + 2);
 	std::cout << _C << attacker << BLK << " used " << attackType[d] << "!" << std::endl;
 	if (i > 0)
 		printAttack(attacker, target, _attack);
 	else
 		printMissed(attacker, target);
-	_energyPoints -= 25;
+	if (_energyPoints > 25)
+		_energyPoints -= 25;
+	else
+		_energyPoints = 0;
 	std::cout << _C << attacker << "'s" << BLK;
 	printStatus(1);
 	std::cout << " energyPoints are reduced by " << RED << "25" << BLK << std::endl;

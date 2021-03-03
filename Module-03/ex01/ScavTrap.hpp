@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/12 09:12:43 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/26 11:16:11 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/27 12:11:37 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class ScavTrap{
 	unsigned int	_hitPoints;
 	unsigned int	_maxHitPoints;
 	unsigned int	_energyPoints;
-	unsigned int	_maxEnergypoints;
+	unsigned int	_maxEnergyPoints;
 	int				_level;
 	std::string		_name;
 	std::string		_C;

@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Fixed.hpp                                          :+:    :+:            */
+/*   Police.hpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/01/05 10:00:59 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/20 11:49:56 by rbraaksm      ########   odam.nl         */
+/*   Created: 2021/03/02 12:36:34 by rbraaksm      #+#    #+#                 */
+/*   Updated: 2021/03/02 12:38:12 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef POLICE_HPP
+# define POLICE_HPP
 
-# include <iostream>
+#include "Victim.hpp"
 
-class Fixed{
-	int					_fxd_pnt;
-	static const int	_frac_bts = 8;
+class Police : public Victim{
 	public:
-		Fixed();
-		~Fixed();
-		Fixed(const Fixed &other);
-		Fixed &operator=(const Fixed &other);
-		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
+		Police(void);
+		Police(std::string const name);
+		Police(const Police &cpy);
+		Police &operator=(const Police &nw);
+		~Police(void);
 };
 #endif

@@ -6,13 +6,14 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 13:56:59 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/20 12:07:43 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/02/18 14:19:01 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 #include "NinjaTrap.hpp"
+#include "SuperTrap.hpp"
 
 void	printWelcome(){
 	std::cout << "**********************************************************************" << std::endl;
@@ -35,13 +36,9 @@ void	printWelcome(){
 int		main(void){
 	srand(time(NULL));
 	printWelcome();
-	std::cout << "<Ash>		";
 	FragTrap Ash = FragTrap("Pikachu");
-	std::cout << "<Gary>		";
 	FragTrap	Gary = FragTrap("Blastoise");
-	std::cout << "<mr. Oak>	";
 	ScavTrap 	Oak = ScavTrap("Muk");
-
 	std::cout << std::endl << "type: START/start" << std::endl;
 	std::string str;
 	while (1){
@@ -73,7 +70,7 @@ int		main(void){
 	}
 	std::cout << std::endl;
 	if (Ash_HP == 0){
-		std::cout << "Mr. Oak challenges Gary" << std::endl << std::endl;
+		std::cout << "Mr. Oak challenges the winner Gary" << std::endl << std::endl;
 		Oak.meleeAttack(Gary.getPokemon());
 		Oak.takeDamage(0);
 		Oak.beRepaired(5);
@@ -85,7 +82,7 @@ int		main(void){
 		Oak.challengeNewcomer(Gary.getPokemon());
 	}
 	else{
-		std::cout << "Mr. Oak is challenges Ash" << std::endl << std::endl;
+		std::cout << "Mr. Oak is challenges the winner Ash" << std::endl << std::endl;
 		Oak.meleeAttack(Ash.getPokemon());
 		Oak.takeDamage(0);
 		Oak.beRepaired(0);
@@ -102,5 +99,9 @@ int		main(void){
 	ninja.ninjaShoeBox(Oak);
 	ninja.ninjaShoeBox(Ash);
 	ninja.ninjaShoeBox(Gary);
-	std::cout << std::endl << "-----DESTRUCTOR-----" << std::endl;
+	std::cout << std::endl << "-----SUPERTRAP-----" << std::endl;
+	SuperTrap super = SuperTrap("Charizard");
+	super.meleeAttack(Ash.getPokemon());
+	super.rangedAttack(Gary.getPokemon());
+	std::cout << std::endl << RED << "-----DESTRUCTOR-----" << BLK << std::endl;
 }

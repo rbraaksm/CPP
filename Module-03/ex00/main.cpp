@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 13:56:59 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/26 10:54:56 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/27 12:52:46 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,23 +50,23 @@ int		main(void){
 		}
 	}
 	std::cout << std::endl << RED << "3 " << YEL << " 2 " << GRN << " 1 " << YEL << " START!!" << BLK <<  std::endl << std::endl;
-		Ash.meleeAttack(Gary.getPokemon());
-		Gary.takeDamage(Ash.getDamage());
-		Gary.rangedAttack(Ash.getPokemon());
-		Ash.takeDamage(Gary.getDamage());
+	Ash.meleeAttack(Gary.getPokemon());
+	Gary.takeDamage(Ash.getDamage());
+	Gary.rangedAttack(Ash.getPokemon());
+	Ash.takeDamage(Gary.getDamage());
 	int Ash_HP = Ash.getHP();
 	int Gary_HP = Gary.getHP();
 	while (Ash_HP > 0 && Gary_HP > 0){
-			Ash.vaulthunter_dot_exe(Gary.getPokemon());
-			Gary.takeDamage(Ash.getDamage());
-			if ((Ash_HP = Ash.getHP()) == 0 || (Gary_HP = Gary.getHP())== 0)
-				break ;
-			Gary.vaulthunter_dot_exe(Ash.getPokemon());
-			Ash.takeDamage(Gary.getDamage());
-			if ((Ash_HP = Ash.getHP()) == 0 || (Gary_HP = Gary.getHP()) == 0)
-				break ;
-			Ash_HP = Ash.getHP();
-			Gary_HP = Gary.getHP();
+		Ash.vaulthunter_dot_exe(Gary.getPokemon());
+		Gary.takeDamage(Ash.getDamage());
+		if ((Ash_HP = Ash.getHP()) == 0 || (Gary_HP = Gary.getHP())== 0)
+			break ;
+		Gary.vaulthunter_dot_exe(Ash.getPokemon());
+		Ash.takeDamage(Gary.getDamage());
+		if ((Ash_HP = Ash.getHP()) == 0 || (Gary_HP = Gary.getHP()) == 0)
+			break ;
+		Ash_HP = Ash.getHP();
+		Gary_HP = Gary.getHP();
 	}
 	std::cout << "--------DESTRUCTOR--------" << std::endl;
 }

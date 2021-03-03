@@ -6,14 +6,14 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 11:15:28 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/26 15:34:41 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/02/18 14:12:06 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(void){
-	std::cout << "Lets battle!!	";
+	std::cout << "---ClapTrap constructor---" << std::endl;
 	return ;
 }
 
@@ -30,7 +30,7 @@ ClapTrap& ClapTrap::operator=(ClapTrap const& nw){
 	this->_hitPoints = nw._hitPoints;
 	this->_maxHitPoints = nw._maxHitPoints;
 	this->_energyPoints = nw._energyPoints;
-	this->_maxEnergypoints = nw._maxEnergypoints;
+	this->_maxEnergyPoints = nw._maxEnergyPoints;
 	this->_level = nw._level;
 	this->_meleeAttackDamage = nw._meleeAttackDamage;
 	this->_rangedAttackDamage = nw._rangedAttackDamage;
@@ -45,10 +45,7 @@ ClapTrap& ClapTrap::operator=(ClapTrap const& nw){
 }
 
 ClapTrap::~ClapTrap(void){
-	if (_hitPoints == 0 || _name == "Muk")
-		std::cout << "Bye loser!!" << std::endl;
-	else
-		std::cout << "Bye WINNER!!" << std::endl;
+	std::cout << "---ClapTrap destructor---" << std::endl;
 	return ;
 }
 
@@ -91,6 +88,8 @@ void	ClapTrap::printMissed(std::string attacker, std::string target){
 		color = CYA;
 	else if (attacker == "Blastoise")
 		color = BLU;
+	else if (attacker == "Charizard")
+		color = RED;
 	if (target == "Pikachu")
 		std::cout << color << attacker << "'s" << BLK << " attack missed " << YEL << target << BLK << std::endl;
 	else if (target == "Blastoise")

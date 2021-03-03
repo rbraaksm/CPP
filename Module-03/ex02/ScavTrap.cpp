@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/12 09:35:25 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/26 13:35:08 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/27 12:11:37 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ ScavTrap::ScavTrap(std::string const name){
 	_hitPoints = 100;
 	_maxHitPoints = 100;
 	_energyPoints = 100;
-	_maxEnergypoints = 100;
+	_maxEnergyPoints = 100;
 	_level = 1;
 	_meleeAttackDamage = 30;
 	_rangedAttackDamage = 20;
@@ -42,7 +42,7 @@ ScavTrap::ScavTrap(const ScavTrap& cpy){
 	_hitPoints = cpy._hitPoints;
 	_maxHitPoints = cpy._maxHitPoints;
 	_energyPoints = cpy._energyPoints;
-	_maxEnergypoints = cpy._maxEnergypoints;
+	_maxEnergyPoints = cpy._maxEnergyPoints;
 	_level = cpy._level;
 	_meleeAttackDamage = cpy._meleeAttackDamage;
 	_rangedAttackDamage = cpy._rangedAttackDamage;
@@ -60,7 +60,7 @@ ScavTrap & ScavTrap::operator=(ScavTrap const& nw){
 	this->_hitPoints = nw._hitPoints;
 	this->_maxHitPoints = nw._maxHitPoints;
 	this->_energyPoints = nw._energyPoints;
-	this->_maxEnergypoints = nw._maxEnergypoints;
+	this->_maxEnergyPoints = nw._maxEnergyPoints;
 	this->_level = nw._level;
 	this->_meleeAttackDamage = nw._meleeAttackDamage;
 	this->_rangedAttackDamage = nw._rangedAttackDamage;

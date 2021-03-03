@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 14:19:17 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/26 15:34:19 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/02/18 14:15:10 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,13 @@ FragTrap::FragTrap(void){
 	return ;
 }
 
-FragTrap::FragTrap(std::string name){
-	if (name == "Pikachu")
-		std::cout << YEL << name << "!" << RED << "   I choose you!!    " << BLK "<" << YEL << "Pikachu" << BLK << ">" << YEL << " PIKA PIKA" << BLK << std::endl;
-	else
-		std::cout << BLU << name << "!" << RED << " I choose you!!    " << BLK << "<" << BLU << "Blastoise" << BLK << ">" << BLU << " BLASTOIIISE" << BLK << std::endl;
+FragTrap::FragTrap(std::string name) : ClapTrap(name){
+	std::cout << "---FragTrap constructor---" << std::endl;
 	_name = name;
 	_hitPoints = 100;
 	_maxHitPoints = 100;
 	_energyPoints = 100;
-	_maxEnergypoints = 100;
+	_maxEnergyPoints = 100;
 	_level = 1;
 	_meleeAttackDamage = 30;
 	_rangedAttackDamage = 20;
@@ -36,18 +33,15 @@ FragTrap::FragTrap(std::string name){
 	_quickAttack = 10;
 	_slamAttack = 50;
 	_attack = 0;
-	if (name == "Pikachu")
-		_C = YEL;
-	else
-		_C = BLU;
+	_C = BLK;
 }
 
-FragTrap::FragTrap(const FragTrap& cpy){
+FragTrap::FragTrap(const FragTrap& cpy) : ClapTrap(cpy){
 	_name = cpy._name;
 	_hitPoints = cpy._hitPoints;
 	_maxHitPoints = cpy._maxHitPoints;
 	_energyPoints = cpy._energyPoints;
-	_maxEnergypoints = cpy._maxEnergypoints;
+	_maxEnergyPoints = cpy._maxEnergyPoints;
 	_level = cpy._level;
 	_meleeAttackDamage = cpy._meleeAttackDamage;
 	_rangedAttackDamage = cpy._rangedAttackDamage;
@@ -65,7 +59,7 @@ FragTrap & FragTrap::operator=(const FragTrap& nw){
 	this->_hitPoints = nw._hitPoints;
 	this->_maxHitPoints = nw._maxHitPoints;
 	this->_energyPoints = nw._energyPoints;
-	this->_maxEnergypoints = nw._maxEnergypoints;
+	this->_maxEnergyPoints = nw._maxEnergyPoints;
 	this->_level = nw._level;
 	this->_meleeAttackDamage = nw._meleeAttackDamage;
 	this->_rangedAttackDamage = nw._rangedAttackDamage;
@@ -80,11 +74,7 @@ FragTrap & FragTrap::operator=(const FragTrap& nw){
 }
 
 FragTrap::~FragTrap(void){
-	std::cout << "<" << _C << _name << BLK << ">";
-	if (_hitPoints == 0)
-		std::cout << " Let's go the Pokémon Center!!" << std::endl;
-	else
-		std::cout << " EASY WIN!!" << std::endl;
+	std::cout << "---FragTrap destructor---" << std::endl;
 	return ;
 }
 
@@ -133,11 +123,14 @@ void	FragTrap::reduceEnergy(void){
 }
 
 void	FragTrap::printAttack(std::string attacker, std::string target, int amount){
-	if (target == "Pikachu")
+	if (attacker == "Pikachu")
+		std::cout << YEL << attacker << "'s" << BLK << " attack hit " << BLU << target << BLK \
+		", it caused " << RED << amount << BLK << " points of damage!" << std::endl;
+	else if (attacker == "Blastoise")
 		std::cout << BLU << attacker << "'s" << BLK << " attack hit " << YEL << target << BLK \
 		", it caused " << RED << amount << BLK << " points of damage!" << std::endl;
-	else if (target == "Blastoise")
-		std::cout << YEL << attacker << "'s" << BLK << " attack hit " << BLU << target << BLK \
+	else if (target == "Charizard")
+		std::cout <<  " attack hit " << BLU << target << BLK \
 		", it caused " << RED << amount << BLK << " points of damage!" << std::endl;
 	std::cout << _C << attacker << "'s" << BLK << " TURN IS OVER." << std::endl;
 }
@@ -146,9 +139,10 @@ void	FragTrap::meleeAttack(std::string const& target){
 	int i = rand() % 2;
 	reduceEnergy();
 	_attack = 0;
+	_C = YEL;
 	if (i > 0)
 		_attack = setDamage(0);
-	std::string attacker = (target == "Pikachu" ? "Blastoise" : "Pikachu");
+	std::string attacker = "Pikachu";
 	std::cout << _C << attacker << BLK << " used MELEE!" << std::endl;
 	if (i > 0)
 		printAttack(attacker, target, _attack);
@@ -165,10 +159,15 @@ void	FragTrap::rangedAttack(std::string const& target){
 	int i = rand() % 2;
 	reduceEnergy();
 	_attack = 0;
+	_C = BLU;
 	if (i > 0)
 		_attack = setDamage(1);
-	std::string attacker = (target == "Pikachu" ? "Blastoise" : "Pikachu");
-	std::cout << _C << attacker << BLK << " used a RANGED ATTACK!" << std::endl;
+	std::string attacker = "Blastoise";
+	if (target == "Blastoise"){
+		attacker = "Charizard";
+		_C = RED;
+	}
+	std::cout << _C << attacker << BLK << " used a RANGED ATTACK on " << target << std::endl;
 	if (i > 0)
 		printAttack(attacker, target, _attack);
 	else
@@ -198,26 +197,30 @@ void	FragTrap::vaulthunter_dot_exe(std::string const& target){
 	int	d = rand() % 5;
 	reduceEnergy();
 	_attack = 0;
-	if (i > 0)
-		_attack = setDamage(d + 2);
 	std::string attacker = (target == "Pikachu" ? "Blastoise" : "Pikachu");
 	std::string attackType[] = {"TACKLE", "tailWhip", "ROLL", "quickAttack", "SLAM"};
-	if (_energyPoints - 25 < 0){
-		std::cout << _C << attacker << BLK << " cannot use " << attackType[d] << " because EnergyPoint are too low!" << std::endl;
+	if (_energyPoints < 25){
+		std::cout << _C << attacker << BLK << " cannot use " << attackType[d] << " because energyPoints are too low!" << std::endl;
+		std::cout << _C << attacker << BLK << " energyPoints are increased by 10" << std::endl << std::endl;
+		reduceEnergy();
 		return ;
 	}
+	if (i > 0)
+		_attack = setDamage(d + 2);
 	std::cout << _C << attacker << BLK << " used " << attackType[d] << "!" << std::endl;
 	if (i > 0)
 		printAttack(attacker, target, _attack);
 	else
 		printMissed(attacker, target);
-	_energyPoints -= 25;
+	if (_energyPoints > 25)
+		_energyPoints -= 25;
+	else
+		_energyPoints = 0;
 	std::cout << _C << attacker << "'s" << BLK;
 	printStatus(1);
 	std::cout << " energyPoints are reduced by " << RED << "25" << BLK << std::endl;
 	beRepaired(_armorDamageReduction);
 }
-
 
 unsigned int	FragTrap::getRAD(void) const{
 	return (_rangedAttackDamage);

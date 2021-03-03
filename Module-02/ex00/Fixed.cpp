@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 10:00:51 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/18 14:14:46 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/20 11:25:01 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,8 @@ Fixed::Fixed(const Fixed &other){
 
 Fixed & Fixed::operator=(const Fixed &other){
 	std::cout << "Assignation operator called" << std::endl;
-	if (this == &other)
-		return (*this);
-    _fxd_pnt = other.getRawBits();
+	if (this != &other)
+    	_fxd_pnt = other.getRawBits();
     return (*this);
 }
 
@@ -44,17 +43,16 @@ void	Fixed::setRawBits(int const raw){
 	_fxd_pnt = raw;
 }
 
-
 int		main(void){
 	Fixed a;
 	Fixed b(a);
 	Fixed c;
 
-	// c = b;
+	c = b;
 
-	// std::cout << a.getRawBits() << std::endl;
-	// std::cout << b.getRawBits() << std::endl;
-	// std::cout << c.getRawBits() << std::endl;
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
 
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 11:15:28 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/26 15:29:45 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/01/27 12:11:37 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &nw){
 	this->_hitPoints = nw._hitPoints;
 	this->_maxHitPoints = nw._maxHitPoints;
 	this->_energyPoints = nw._energyPoints;
-	this->_maxEnergypoints = nw._maxEnergypoints;
+	this->_maxEnergyPoints = nw._maxEnergyPoints;
 	this->_level = nw._level;
 	this->_meleeAttackDamage = nw._meleeAttackDamage;
 	this->_rangedAttackDamage = nw._rangedAttackDamage;

@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Fixed.hpp                                          :+:    :+:            */
+/*   Peon.hpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/01/05 10:54:03 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/20 11:48:50 by rbraaksm      ########   odam.nl         */
+/*   Created: 2021/03/02 11:53:52 by rbraaksm      #+#    #+#                 */
+/*   Updated: 2021/03/02 12:02:37 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef PEON_HPP
+# define PEON_HPP
 
-# include <iostream>
-# include <cmath>
+# include "Victim.hpp"
 
-class Fixed{
-	int					_fxd_pnt;
-	static const int	_frac_bts = 8;
+class Peon : public Victim{
 	public:
-		Fixed();
-		~Fixed();
-		Fixed(const Fixed& other);
-		Fixed(const int n);
-		Fixed(const float n);
-		Fixed				&operator=(const Fixed& other);
-		int					getRawBits(void) const;
-		void				setRawBits(int const raw);
-		float				toFloat(void) const;
-		int					toInt(void) const;
+		Peon(void);
+		Peon(std::string const name);
+		Peon(const Peon &cpy);
+		Peon &operator=(const Peon &nw);
+		~Peon(void);
 };
 
 #endif
