@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/02 13:12:47 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/02 13:30:07 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/03 10:16:52 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ AWeapon::AWeapon(const AWeapon &cpy){
 	_name = cpy._name;
 	_ap = cpy._ap;
 	_damagePoints = cpy._damagePoints;
+	return ;
 }
 
 AWeapon& AWeapon::operator=(const AWeapon &nw){
