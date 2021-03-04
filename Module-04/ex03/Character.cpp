@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/04 13:12:17 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/04 13:50:58 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/04 13:54:48 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,7 @@ std::string	const&	Character::getName(void) const{
 
 Character&	Character::operator=(const Character &nw){
 	std::cout << "Character Assignation operator called" << std::endl;
-	if(this != &nw)
-	{
+	if(this != &nw){
 		for(int i = 0; i < this->_count; i++)
 			delete this->_inventory[i];
 		this->_name = nw.getName();
@@ -51,13 +50,11 @@ Character&	Character::operator=(const Character &nw){
 void			Character::equip(AMateria *m){
 	if(!m)
 		std::cout << "Please send a Materia to add" << std::endl;
-	else if (this->_count == 4)
-	{
+	else if (this->_count == 4){
 		std::cout << "Inventory of this Character is already full.\n" << std::endl;
 		delete m;
 	}
-	else
-	{
+	else{
 		this->_inventory[this->_count] = m;
 		std::cout << "Materia " << m->getType() << " has been added to the Character inventory on slot [" << this->_count << "]" << std::endl;
 		std::cout << "Character inventory count is now: " << this->_count << std::endl;
@@ -67,13 +64,11 @@ void			Character::equip(AMateria *m){
 }
 
 void			Character::unequip(int idx){
-	if(idx < 0 || idx >= this->_count || idx > 4)
-	{
+	if(idx < 0 || idx >= this->_count || idx > 4){
 		std::cout << "Please enter a valid number" <<std::endl;
 		return ;
 	}
-	for(int i = idx; i < this->_count; i++)
-	{
+	for(int i = idx; i < this->_count; i++){
 		this->_inventory[i] = this->_inventory[i + 1];
 	}
 	this->_count -= 1;

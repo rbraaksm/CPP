@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/02 12:59:50 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/02 14:39:23 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/04 13:57:57 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@ class AWeapon{
 		int			_ap;
 		int			 _damagePoints;
 		public:
-			AWeapon(void);
+			AWeapon();
 	        AWeapon(std::string const &name, int apcost, int damage);
 			AWeapon(const AWeapon &cpy);
 			AWeapon &operator=(const AWeapon &nw);
-	        virtual ~AWeapon(void);
-	        std::string const 	getName(void) const;
-	        int 				getAPCost(void) const;
-	        int 				getDamage(void) const;
-	        virtual void		attack(void) const = 0;
+	        virtual ~AWeapon();
+	        std::string const 	getName() const;
+	        int 				getAPCost() const;
+	        int 				getDamage() const;
+	        virtual void		attack() const = 0;
 };
 
 #endif

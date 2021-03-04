@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/02 12:36:34 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/02 12:38:12 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/04 13:57:20 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 
 class Police : public Victim{
 	public:
-		Police(void);
+		Police();
 		Police(std::string const name);
 		Police(const Police &cpy);
 		Police &operator=(const Police &nw);
-		~Police(void);
+		~Police();
 };
 #endif

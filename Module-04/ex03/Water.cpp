@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/04 11:41:08 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/03/04 13:50:44 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/04 13:55:37 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ Water::Water(const Water &cpy) : AMateria(cpy){
 }
 
 Water&	Water::operator=(const Water &nw){
-	if(this != &nw)
-	{
+	if(this != &nw){
 		setXP(nw.getXP());
 		setType(nw.getType());
 	}
@@ -42,11 +41,11 @@ unsigned int				Water::getXP(void) const{
 	return (AMateria::getXP());
 }
 
-Water*					Water::clone(void) const{
+Water*	Water::clone(void) const{
 	return new Water();
 }
 
-void						Water::use(ICharacter &target){
+void	Water::use(ICharacter &target){
 	setXP(AMateria::getXP() + 10);
 	std::cout << "* Water the strength of a 1000 waterfalls pours down on " << target.getName() << " *" << std::endl;
 	return ;

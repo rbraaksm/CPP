@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/02/02 15:34:21 by timvancitte   #+#    #+#                 */
-/*   Updated: 2021/03/04 13:52:22 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/04 13:54:00 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,7 @@
 
 int			main(void)
 {
-// 	IMateriaSource* src = new MateriaSource();
-// src->learnMateria(new Ice());
-// src->learnMateria(new Cure());
-// ICharacter* me = new Character("me");
-// AMateria* tmp;
-// tmp = src->createMateria("ice");
-// me->equip(tmp);
-// tmp = src->createMateria("cure");
-// me->equip(tmp);
-// ICharacter* bob = new Character("bob");
-// me->use(0, *bob);
-// me->use(1, *bob);
-// delete bob;
-// delete me;
-// delete src;
-		IMateriaSource*	src = new MateriaSource();
+	IMateriaSource*	src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
 

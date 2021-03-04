@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/04 11:51:32 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/04 13:48:53 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/04 13:55:05 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,7 @@ Ice*					Ice::clone(void) const{
 	return new Ice();
 }
 
-void 		Ice::use(ICharacter& target)
-{
+void 		Ice::use(ICharacter& target){
 	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 	AMateria::use(target);
 }

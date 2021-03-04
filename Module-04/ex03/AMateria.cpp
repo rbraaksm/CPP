@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/04 11:29:51 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/04 12:00:29 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/04 13:54:27 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@ AMateria::AMateria(const AMateria &cpy){
 }
 
 AMateria&	AMateria::operator=(const AMateria &nw){
-	if(this != &nw)
-	{
+	if(this != &nw){
 		this->_xp = nw._xp;
 		this->_type = nw._type;
 	}
