@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   PowerFirst.hpp                                     :+:    :+:            */
+/*   PowerFist.cpp                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/03/02 14:54:36 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/02 14:54:59 by rbraaksm      ########   odam.nl         */
+/*   Created: 2021/03/02 14:55:20 by rbraaksm      #+#    #+#                 */
+/*   Updated: 2021/03/03 09:22:19 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef POWERFIRST_HPP
-# define POWERFIRST_HPP
+#include "PowerFist.hpp"
 
-# include "AWeapon.hpp"
+PowerFist::PowerFist(void) : AWeapon("Power First", 8, 50){
+	return ;
+}
 
-class PowerFirst : public AWeapon{
-	public:
-		PowerFirst();
-		PowerFirst(const PowerFirst &cpy);
-		virtual ~PowerFirst();
-		void	attack() const;
-};
+PowerFist::PowerFist(const PowerFist &cpy) : AWeapon(cpy){
+	return ;
+}
 
-#endif
+PowerFist::~PowerFist(void){
+	return ;
+}
+
+void	PowerFist::attack(void) const{
+	std::cout << "* pschhh... SBAM! *" << std::endl;
+	return ;
+}
