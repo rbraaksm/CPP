@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/05 10:35:49 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/05 12:35:39 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/05 17:30:46 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,21 @@ const char* Bureaucrat::GradeTooLowException::what() const throw(){
 std::ostream&	operator<<(std::ostream &output, Bureaucrat const &bureaucrat){
 	output << bureaucrat.getName() << ", with grade " << bureaucrat.getGrade() << "." << std::endl;
 	return output;
+}
+
+void	Bureaucrat::signForm(const Form &form) const{
+	std::cout << "Bureaucrat: " << _name << std::endl;
+	std::cout << "Form: " << form.getName() << std::endl;
+	std::cout << "Grade: " << _grade << std::endl;
+	std::cout << "Signed grade: " << form.getGradeSign() << std::endl;
+	std::cout << "Execute grade: " << form.getGradeExec() << std::endl;
+	std::cout << "Signed: ";
+	if (this->getGrade() < form.getGradeSign()){
+		std::cout << "SIGNED" << std::endl;
+		std::cout << "Reason: A better grade! Well done!" << std::endl;
+	}
+	else{
+		std::cout << "NOT SIGNED" << std::endl;
+		std::cout << "Reason: Your grade isn't good enough" << std::endl;
+	}
 }
