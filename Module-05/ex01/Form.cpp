@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/05 14:20:01 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/05 17:21:08 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/08 13:00:30 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,8 @@ void	Form::beSigned(const Bureaucrat &nw){
 	if (nw.getGrade() < this->getGradeSign())
 		this->_signed = true;
 	nw.signForm(*this);
-	throw Bureaucrat::GradeTooLowException();
+	if (nw.getGrade() > this->getGradeSign())
+		throw Bureaucrat::GradeTooLowException();
 	return ;
 }
 

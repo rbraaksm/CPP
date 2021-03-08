@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/05 11:06:25 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/05 12:35:42 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/08 12:49:03 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int	main(void){
 	catch(std::exception &e){
 		std::cout << e.what() << std::endl;
 	}
-	std::cout << std::endl <<  "--- Create a Bureacrat with a copy constructor ---" << std::endl;
+	std::cout << std::endl <<  "--- Assignation ---" << std::endl;
 	try{
 		Bureaucrat test1("test1", 150);
 		Bureaucrat test2("test2", 130);
