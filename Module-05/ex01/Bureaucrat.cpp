@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/05 10:35:49 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/08 12:40:51 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/09 11:59:48 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void	Bureaucrat::signForm(const Form &form) const{
 	std::cout << "Signed: ";
 	if (this->getGrade() <= form.getGradeSign()){
 		std::cout << "SIGNED" << std::endl;
-		std::cout << "Reason: A better grade! Well done!" << std::endl;
+		std::cout << "Reason: The bureaucrats grade is high enough!" << std::endl;
 	}
 	else{
 		std::cout << "NOT SIGNED" << std::endl;
