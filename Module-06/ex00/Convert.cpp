@@ -6,7 +6,7 @@
 /*   By: rbraaksm <rbraaksm@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/10 09:58:54 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/10 16:03:34 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/10 16:05:55 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void    Convert::printChar(void) const{
     std::cout << "type:\t" << _type << std::endl;
     std::cout << "char:\t";
     if (isprint(this->_char))
-        std::cout << _char << std::endl;
+        std::cout << "'" << _char << "'" << std::endl;
     else
         std::cout << "non displayable" << std::endl;
     return ;
