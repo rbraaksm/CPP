@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   Enemy.cpp                                          :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: rbraaksm <rbraaksm@student.codam.nl>         +#+                     */
+/*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/03 10:08:50 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/03 11:12:53 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/05 12:38:43 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

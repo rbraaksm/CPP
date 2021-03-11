@@ -6,7 +6,7 @@
 #    By: renebraaksma <renebraaksma@student.42.f      +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/02 12:38:19 by timvancitte   #+#    #+#                  #
-#    Updated: 2021/03/10 21:43:33 by rbraaksm      ########   odam.nl          #
+#    Updated: 2021/03/10 21:43:04 by rbraaksm      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ YL = "\x1b[33;01m"
 BL = "\x1b[34;01m"
 NO = "\x1b[0m"
 
-NAME = convert
+NAME = serialization
 
-SRCS = convert.cpp main.cpp
+SRCS = main.cpp
 
 FLAGS = -Wall -Wextra -Werror
 

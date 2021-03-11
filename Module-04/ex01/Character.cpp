@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   Character.cpp                                      :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: rbraaksm <rbraaksm@student.codam.nl>         +#+                     */
+/*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/03 10:36:34 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/03 11:33:53 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/05 12:38:37 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

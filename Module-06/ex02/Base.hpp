@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Ice.hpp                                            :+:    :+:            */
+/*   Base.hpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/03/04 11:49:36 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/05 12:40:36 by rbraaksm      ########   odam.nl         */
+/*   Created: 2021/03/10 21:44:09 by rbraaksm      #+#    #+#                 */
+/*   Updated: 2021/03/11 08:30:27 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-# define ICE_HPP
+#ifndef BASE_HPP
+# define BASE_HPP
 
-# include "AMateria.hpp"
+# include <iostream>
 
-class Ice : public AMateria{
+class Base{
 	public:
-		Ice();
-		Ice(const Ice &cpy);
-		Ice &operator=(const Ice &nw);
-		virtual ~Ice();
-		Ice*	clone(void) const;
-		void 	use(ICharacter& target);
+		virtual ~Base(){}
+};
+
+class A : public Base{
+};
+
+class B : public Base{
+};
+
+class C : public Base{
 };
 
 #endif
