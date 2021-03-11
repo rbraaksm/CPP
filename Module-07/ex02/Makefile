@@ -6,7 +6,7 @@
 #    By: renebraaksma <renebraaksma@student.42.f      +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/02 12:38:19 by timvancitte   #+#    #+#                  #
-#    Updated: 2021/03/11 11:40:43 by rbraaksm      ########   odam.nl          #
+#    Updated: 2021/03/11 11:39:54 by rbraaksm      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ YL = "\x1b[33;01m"
 BL = "\x1b[34;01m"
 NO = "\x1b[0m"
 
-NAME = swap
+NAME = array
 
 SRCS = main.cpp
 

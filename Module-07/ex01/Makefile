@@ -6,7 +6,7 @@
 #    By: renebraaksma <renebraaksma@student.42.f      +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/11/02 12:38:19 by timvancitte   #+#    #+#                  #
-#    Updated: 2021/03/11 09:25:15 by rbraaksm      ########   odam.nl          #
+#    Updated: 2021/03/11 11:40:17 by rbraaksm      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ NAME = iter
 
 SRCS = main.cpp
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -std=c++03 -pedantic
 
 CMPL = clang++
 
