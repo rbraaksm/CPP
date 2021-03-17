@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 13:56:59 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/26 14:14:44 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/17 13:59:23 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,8 +100,8 @@ int		main(void){
 	std::cout << std::endl << "-----NINJATRAP-----" << std::endl;
 	NinjaTrap ninja = NinjaTrap("Hitmonlee");
 	ninja.ninjaShoeBox(ninja);
-	ninja.ninjaShoeBox(Oak);
+	// ninja.ninjaShoeBox(Oak);
 	ninja.ninjaShoeBox(Ash);
-	ninja.ninjaShoeBox(Gary);
+	ninja.ninjaShoeBox(Oak);
 	std::cout << std::endl << "-----DESTRUCTOR-----" << std::endl;
 }

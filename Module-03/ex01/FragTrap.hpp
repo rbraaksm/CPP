@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 13:57:48 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/27 12:11:37 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/17 14:18:22 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ class FragTrap{
 		FragTrap(std::string const name);
 		FragTrap(const FragTrap& cpy);
 		FragTrap  &operator=(FragTrap const& other);
-		~FragTrap(void);
+		virtual ~FragTrap(void);
 		void			rangedAttack(std::string const& target);
 		void			meleeAttack(std::string const& target);
 		void			takeDamage(unsigned int amount);

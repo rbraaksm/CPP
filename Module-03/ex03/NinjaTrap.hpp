@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/14 12:56:55 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/26 15:29:45 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/17 14:13:43 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "ClapTrap.hpp"
 # include "FragTrap.hpp"
+# include "ScavTrap.hpp"
 
 class NinjaTrap : public ClapTrap{
 	public:
@@ -24,7 +25,8 @@ class NinjaTrap : public ClapTrap{
 		~NinjaTrap(void);
 		NinjaTrap &operator=(NinjaTrap const& target);
 		void	ninjaShoeBox(NinjaTrap const& target);
-		void	ninjaShoeBox(const ClapTrap& target);
+		void	ninjaShoeBox(ClapTrap const& target);
 		void	ninjaShoeBox(FragTrap const& target);
+		void	ninjaShoeBox(ScavTrap const& target);
 };
 #endif

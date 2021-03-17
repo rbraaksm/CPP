@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/14 12:56:55 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/27 12:21:09 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/17 14:07:50 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class NinjaTrap : public ClapTrap{
 		NinjaTrap(std::string const name);
 		NinjaTrap(const NinjaTrap& cpy);
 		NinjaTrap &operator=(NinjaTrap const& target);
-		~NinjaTrap(void);
+		virtual ~NinjaTrap(void);
 		void	ninjaShoeBox(NinjaTrap const& target);
 		void	ninjaShoeBox(ClapTrap const& target);
 		void	ninjaShoeBox(FragTrap const& target);

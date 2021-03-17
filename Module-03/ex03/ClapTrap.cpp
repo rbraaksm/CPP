@@ -6,18 +6,19 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 11:15:28 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/27 12:11:37 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/17 14:29:00 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(void){
-	std::cout << "Lets battle!!	";
+	std::cout << "---ClapTrap constructor---" << std::endl;
 	return ;
 }
 
 ClapTrap::ClapTrap(std::string const name){
+	std::cout << "---ClapTrap constructor---" << std::endl;
 	_name = name;
 }
 
@@ -45,10 +46,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &nw){
 }
 
 ClapTrap::~ClapTrap(void){
-	if (_hitPoints == 0 || _name == "Muk")
-		std::cout << "Bye loser!!" << std::endl;
-	else
-		std::cout << "Bye WINNER!!" << std::endl;
+	std::cout << "---ClapTrap destructor---" << std::endl;
 	return ;
 }
 

@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/20 12:37:10 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/02/18 14:15:35 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/17 14:15:42 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ SuperTrap::SuperTrap(std::string const name) : FragTrap(name), NinjaTrap(name){
 	_maxEnergyPoints = _energyPoints;
 	_level = 1;
 	_meleeAttackDamage = NinjaTrap::getMAD();
-	_meleeAttackDamage = FragTrap::getRAD();
+	_rangedAttackDamage = FragTrap::getRAD();
 	_armorDamageReduction = FragTrap::getDR();
 }
 

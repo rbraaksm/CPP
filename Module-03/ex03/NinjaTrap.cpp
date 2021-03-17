@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/14 13:13:20 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/27 12:11:37 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/17 14:30:19 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 #include "FragTrap.hpp"
 
 NinjaTrap::NinjaTrap(void){
+	std::cout << "---NinjaTrap constructor---" << std::endl;
 	return ;
 }
 
 NinjaTrap::NinjaTrap(std::string const name){
-	std::cout << "AAAAAAA NINJA!!" << std::endl;
+	std::cout << "---NinjaTrap constructor---" << std::endl;
 	_name = name;
 	_hitPoints = 60;
 	_maxHitPoints = 60;
@@ -56,6 +57,7 @@ NinjaTrap & NinjaTrap::operator=(NinjaTrap const& nw){
 }
 
 NinjaTrap::~NinjaTrap(void){
+	std::cout << "---NinjaTrap destructor---" << std::endl;
 	return ;
 }
 
@@ -63,10 +65,14 @@ void	NinjaTrap::ninjaShoeBox(NinjaTrap const& target){
 	std::cout << "Surprise!! " << target.getName() << " won a performance of JigglyPuff!!" << std::endl;
 }
 
-void	NinjaTrap::ninjaShoeBox(const ClapTrap &target){
+void	NinjaTrap::ninjaShoeBox(ClapTrap const& target){
 	std::cout << "Surprise!! " << target.getName() << " found a SuperPotion" << std::endl;
 }
 
 void	NinjaTrap::ninjaShoeBox(FragTrap const& target){
 	std::cout << "Surprise!! " << target.getName() << " is doing the moonwalk very smooth" << std::endl;
+}
+
+void	NinjaTrap::ninjaShoeBox(ScavTrap const& target){
+	std::cout << "Surprise!! " << target.getName() << " is doing the moonwalk very lazy" << std::endl;
 }

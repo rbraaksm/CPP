@@ -6,13 +6,14 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 14:19:17 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/02/18 14:15:10 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/17 14:30:59 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap(void){
+	std::cout << "---FragTrap constructor---" << std::endl;
 	return ;
 }
 

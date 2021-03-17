@@ -6,21 +6,19 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 14:19:17 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/27 12:58:37 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/17 14:29:33 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap(void){
+	std::cout << "---FragTrap constructor---" << std::endl;
 	return ;
 }
 
 FragTrap::FragTrap(std::string const name){
-	if (name == "Pikachu")
-		std::cout << YEL << name << "!" << RED << "   I choose you!!    " << BLK "<" << YEL << "Pikachu" << BLK << ">" << YEL << " PIKA PIKA" << BLK << std::endl;
-	else
-		std::cout << BLU << name << "!" << RED << " I choose you!!    " << BLK << "<" << BLU << "Blastoise" << BLK << ">" << BLU << " BLASTOIIISE" << BLK << std::endl;
+	std::cout << "---FragTrap constructor---" << std::endl;
 	_name = name;
 	_hitPoints = 100;
 	_maxHitPoints = 100;
@@ -80,11 +78,7 @@ FragTrap & FragTrap::operator=(FragTrap const& nw){
 }
 
 FragTrap::~FragTrap(void){
-	std::cout << "<" << _C << _name << BLK << ">";
-	if (_hitPoints == 0)
-		std::cout << " Let's go the Pokémon Center!!" << std::endl;
-	else
-		std::cout << " EASY WIN!!" << std::endl;
+	std::cout << "---FragTrap destructor---" << std::endl;
 	return ;
 }
 

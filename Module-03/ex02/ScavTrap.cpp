@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/12 09:35:25 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/27 12:11:37 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/17 14:27:40 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 #include "ClapTrap.hpp"
 
 ScavTrap::ScavTrap(void){
+	std::cout << "---ScavTrap constructor---" << std::endl;
 	return ;
 }
 
 ScavTrap::ScavTrap(std::string const name){
-	std::cout << CYA << "Mr. Oak wants to fight against the winner" << BLK << std::endl;
+	std::cout << "---ScavTrap constructor---" << std::endl;
 	_name = name;
 	_hitPoints = 100;
 	_maxHitPoints = 100;
@@ -75,7 +76,7 @@ ScavTrap & ScavTrap::operator=(ScavTrap const& nw){
 }
 
 ScavTrap::~ScavTrap(void){
-	std::cout << _C << "Mr. Oak is walking the walk of shame" << BLK << std::endl;
+	std::cout << "---ScavTrap destructor---" << std::endl;
 	return ;
 }
 
