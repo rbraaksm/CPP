@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/14 13:13:20 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/02/18 13:43:10 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/23 10:59:57 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,19 @@ NinjaTrap::~NinjaTrap(void){
 	return ;
 }
 
+
+unsigned int	NinjaTrap::getEP(void) const{
+	return (_energyPoints);
+}
+
+unsigned int NinjaTrap::getMAD(void) const{
+	return (_meleeAttackDamage);
+}
+
+void	NinjaTrap::meleeAttack(std::string const& target){
+	std::cout << "used the SUPER melee attack on " << target << std::endl;
+}
+
 void	NinjaTrap::ninjaShoeBox(NinjaTrap const& target){
 	std::cout << "Surprise!! " << target.getName() << " won a performance of JigglyPuff!!" << std::endl;
 }
@@ -72,14 +85,6 @@ void	NinjaTrap::ninjaShoeBox(FragTrap const& target){
 	std::cout << "Surprise!! " << target.getName() << " is doing the moonwalk very smooth" << std::endl;
 }
 
-unsigned int	NinjaTrap::getEP(void) const{
-	return (_energyPoints);
-}
-
-unsigned int NinjaTrap::getMAD(void) const{
-	return (_meleeAttackDamage);
-}
-
-void	NinjaTrap::meleeAttack(std::string const& target){
-	std::cout << "used the SUPER melee attack on " << target << std::endl;
+void	NinjaTrap::ninjaShoeBox(ScavTrap const& target){
+	std::cout << "Surprise!! " << target.getName() << " is doing the moonwalk very lazy" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/14 12:56:55 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/17 14:07:50 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/23 11:00:01 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "ClapTrap.hpp"
 # include "FragTrap.hpp"
+# include "ScavTrap.hpp"
 
 class NinjaTrap : public ClapTrap{
 	public:
@@ -26,6 +27,7 @@ class NinjaTrap : public ClapTrap{
 		void	ninjaShoeBox(NinjaTrap const& target);
 		void	ninjaShoeBox(ClapTrap const& target);
 		void	ninjaShoeBox(FragTrap const& target);
+		void	ninjaShoeBox(ScavTrap const& target);
 		void	meleeAttack(std::string const& target);
 		unsigned int	getEP(void) const;
 		unsigned int	getMAD(void) const;

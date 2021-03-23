@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 13:56:59 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/17 13:59:23 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/23 10:58:24 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,8 @@ int		main(void){
 	srand(time(NULL));
 	printWelcome();
 	std::cout << std::endl << "-----CONSTRUCTOR-----" << std::endl;
-	std::cout << "<Ash>		";
 	FragTrap Ash = FragTrap("Pikachu");
-	std::cout << "<Gary>		";
 	FragTrap	Gary = FragTrap("Blastoise");
-	std::cout << "<mr. Oak>	";
 	ScavTrap 	Oak = ScavTrap("Muk");
 
 	std::cout << std::endl << "type: START/start" << std::endl;
@@ -100,7 +97,6 @@ int		main(void){
 	std::cout << std::endl << "-----NINJATRAP-----" << std::endl;
 	NinjaTrap ninja = NinjaTrap("Hitmonlee");
 	ninja.ninjaShoeBox(ninja);
-	// ninja.ninjaShoeBox(Oak);
 	ninja.ninjaShoeBox(Ash);
 	ninja.ninjaShoeBox(Oak);
 	std::cout << std::endl << "-----DESTRUCTOR-----" << std::endl;

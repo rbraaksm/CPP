@@ -6,20 +6,12 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 13:57:48 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/17 14:22:00 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/23 10:59:40 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRAGTRAP_HPP
 # define FRAGTRAP_HPP
-
-# define YEL "\x1b[33;01m"
-# define BLU "\x1b[34;01m"
-# define RED "\x1b[31;01m"
-# define BLK "\x1b[0m"
-# define GRN "\x1b[32;01m"
-# define PUR "\x1b[35;01m"
-# define CYA "\x1b[36;01m"
 
 # include <iostream>
 # include "ClapTrap.hpp"

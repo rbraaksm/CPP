@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 14:19:17 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/01/27 12:58:18 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/23 10:55:40 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -262,4 +262,3 @@ void	FragTrap::vaulthunter_dot_exe(std::string const& target){
 	std::cout << " energyPoints are reduced by " << RED << "25" << BLK << std::endl;
 	beRepaired(_armorDamageReduction);
 }
-
