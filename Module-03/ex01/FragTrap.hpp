@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/05 13:57:48 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/23 10:55:16 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/25 14:02:14 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ class FragTrap{
 	unsigned int	_quickAttack;
 	unsigned int	_slamAttack;
 	unsigned int	_attack;
-	public:
 		FragTrap(void);
+	public:
 		FragTrap(std::string const name);
 		FragTrap(const FragTrap& cpy);
 		FragTrap  &operator=(FragTrap const& other);
