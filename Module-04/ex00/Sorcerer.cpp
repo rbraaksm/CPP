@@ -6,15 +6,11 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/02 10:38:21 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/05 12:38:03 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/25 14:17:46 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sorcerer.hpp"
-
-Sorcerer::Sorcerer(void){
-	return ;
-}
 
 Sorcerer::Sorcerer(std::string const name, std::string const title): _name(name), _title(title){
 	std::cout << _name << ", " << _title << ", is born!" << std::endl;

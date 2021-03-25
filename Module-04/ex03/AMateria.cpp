@@ -6,15 +6,11 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/04 11:29:51 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/04 13:54:27 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/25 14:23:59 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
-
-AMateria::AMateria(void){
-	return ;
-}
 
 AMateria::AMateria(std::string const &type) : _type(type), _xp(0){
 	return ;

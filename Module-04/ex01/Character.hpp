@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/03 10:40:36 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/05 12:38:40 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/25 14:20:04 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class Character{
     std::string _name;
     int         _ap;
     AWeapon     *_weapon;
+    Character();
     public:
-        Character();
         Character(std::string const &name);
         Character(const Character &cpy);
         Character &operator=(const Character &nw);

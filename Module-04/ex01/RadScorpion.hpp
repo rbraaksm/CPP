@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/03 10:33:22 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/05 12:39:04 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/25 14:21:10 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "Enemy.hpp"
 
 class RadScorpion : public Enemy{
-        public:
+    public:
         RadScorpion();
         RadScorpion(const RadScorpion &cpy);
         RadScorpion &operator=(const RadScorpion &nw);

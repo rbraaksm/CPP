@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/04 10:20:23 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/05 12:39:48 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/25 14:23:20 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ typedef struct			s_list{
 class Squad : public ISquad{
 	t_list			*_head;
 	int				_index;
-
 	public:
 		Squad();
 		Squad(const Squad &cpy);

@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/04 10:18:08 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/05 12:39:40 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/25 14:23:09 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ int main(){
 	std::cout << std::endl << "---- DESTRUCTOR ----" << std::endl;
 	delete vlc;
 	delete vlc2;
+	// system("leaks a.out");
 	return 0;
 }

@@ -6,15 +6,11 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/02 11:13:14 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/05 12:37:37 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/25 14:18:15 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Victim.hpp"
-
-Victim::Victim(void){
-	return ;
-}
 
 Victim::Victim(std::string const name): _name(name){
 	std::cout << "Some random victim called " << _name << " just appeared!" << std::endl;

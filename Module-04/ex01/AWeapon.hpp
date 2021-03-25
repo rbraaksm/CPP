@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/02 12:59:50 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/04 13:57:57 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/25 14:19:52 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ class AWeapon{
 		std::string _name;
 		int			_ap;
 		int			 _damagePoints;
+		AWeapon();
 		public:
-			AWeapon();
 	        AWeapon(std::string const &name, int apcost, int damage);
 			AWeapon(const AWeapon &cpy);
 			AWeapon &operator=(const AWeapon &nw);

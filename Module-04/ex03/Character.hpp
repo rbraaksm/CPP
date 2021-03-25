@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/04 12:09:38 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/04 13:12:07 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/25 14:24:16 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class Character : public ICharacter{
 	std::string		_name;
 	AMateria*		_inventory[4];
 	int				_count;
+	Character();
 	public:
-		Character();
 		Character(std::string const &name);
 		Character(Character const &cpy);
 		Character& operator=(const Character &nw);

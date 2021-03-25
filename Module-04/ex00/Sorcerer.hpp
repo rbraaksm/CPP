@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/02 10:31:54 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/04 13:57:33 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/25 14:14:21 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 class Sorcerer{
 	std::string	_name;
 	std::string _title;
+	Sorcerer();
 	public:
-		Sorcerer();
 		Sorcerer(std::string const name, std::string const title);
 		Sorcerer(const Sorcerer &cpy);
 		Sorcerer &operator=(const Sorcerer &nw);

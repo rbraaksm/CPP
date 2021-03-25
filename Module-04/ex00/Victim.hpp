@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/02 11:13:36 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/04 13:57:45 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/25 14:18:10 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 class Victim{
 	std::string _name;
+	Victim();
 	public:
-		Victim();
 		Victim(std::string const name);
 		Victim(const Victim &cpy);
 		Victim &operator=(const Victim &nw);

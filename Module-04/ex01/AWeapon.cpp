@@ -6,15 +6,11 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/02 13:12:47 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/03 10:16:52 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/25 14:19:48 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AWeapon.hpp"
-
-AWeapon::AWeapon(void){
-	return ;
-}
 
 AWeapon::AWeapon(std::string const &name, int apcost, int damage) : _name(name), _ap(apcost), _damagePoints(damage){
 	return ;

@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/02 11:53:52 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/05 12:37:30 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/25 14:13:31 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # include "Victim.hpp"
 
 class Peon : public Victim{
+	Peon();
 	public:
-		Peon();
 		Peon(std::string const name);
 		Peon(const Peon &cpy);
 		Peon &operator=(const Peon &nw);

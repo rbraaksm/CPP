@@ -6,7 +6,7 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/02 12:57:52 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/05 12:38:49 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/25 14:19:41 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,6 @@ int main(void){
     std::cout << *me;
 	me->attack(test);
     std::cout << *me;
+	// system("leaks a.out");
     return 0;
 }

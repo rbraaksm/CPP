@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   Enemy.hpp                                          :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: rbraaksm <rbraaksm@student.codam.nl>         +#+                     */
+/*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/03 10:08:48 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/03 11:18:08 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/25 14:20:17 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 class Enemy{
     int         _hp;
     std::string _type;
+    Enemy();
     public:
-        Enemy();
         Enemy(int hp, std::string const &type);
         Enemy(const Enemy &cpy);
         Enemy &operator=(const Enemy &nw);

@@ -6,15 +6,11 @@
 /*   By: renebraaksma <renebraaksma@student.42.f      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/03/03 10:36:34 by rbraaksm      #+#    #+#                 */
-/*   Updated: 2021/03/05 12:38:37 by rbraaksm      ########   odam.nl         */
+/*   Updated: 2021/03/25 14:19:56 by rbraaksm      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
-
-Character::Character(void){
-    return ;
-}
 
 Character::Character(std::string const &name) : _name(name), _ap(40), _weapon(NULL){
     return ;
